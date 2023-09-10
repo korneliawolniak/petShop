@@ -7,14 +7,27 @@
     </svg>
   </div>
   <div class="header__navbar">
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="About Us"></mat-tab>
-      <mat-tab label="Dog"></mat-tab>
-      <mat-tab label="Cat"></mat-tab>
-      <mat-tab label="Contact"></mat-tab>
-    </mat-tab-group>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         routerLink="/about"
+         autofocus>
+        About Us
+      </a>
+      <a mat-tab-link
+         routerLink="/dog">
+        Dog
+      </a>
+      <a mat-tab-link
+         routerLink="/cat">
+        Cat
+      </a>
+      <a mat-tab-link
+         routerLink="/contact">
+        Contact
+      </a>
+    </nav>
   </div>
-  <div class="header__shopping-cart">
+  <div class="header__shopping-cart" routerLink="/shopping-cart">
     <mat-icon matBadge="3" matBadgeColor="warn">shopping_cart</mat-icon>
   </div>
 </div>
