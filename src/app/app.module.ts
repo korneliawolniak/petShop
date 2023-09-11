@@ -14,6 +14,19 @@ import {SalePageComponent} from './pages/sale-page/sale-page.component';
 import {AboutUsPageComponent} from './pages/about-us-page/about-us-page.component';
 import {ContactPageComponent} from './pages/contact-page/contact-page.component';
 import {ShoppingCartPageComponent} from './pages/shopping-cart-page/shopping-cart-page.component';
+import {FaqComponent} from './components/faq/faq.component';
+import {FaqsListComponent} from './components/faqs-list/faqs-list.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {ContactFormComponent} from './components/contact-form/contact-form.component';
+import {MatInputModule} from "@angular/material/input";
+import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {EmailInputComponent} from './components/email-input/email-input.component';
+import {MessageInputComponent} from './components/message-input/message-input.component';
+import {MatButtonModule} from "@angular/material/button";
+import {AlertComponent} from './components/alert/alert.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +37,13 @@ import {ShoppingCartPageComponent} from './pages/shopping-cart-page/shopping-car
     SalePageComponent,
     AboutUsPageComponent,
     ContactPageComponent,
-    ShoppingCartPageComponent
+    ShoppingCartPageComponent,
+    FaqComponent,
+    FaqsListComponent,
+    ContactFormComponent,
+    EmailInputComponent,
+    MessageInputComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +52,14 @@ import {ShoppingCartPageComponent} from './pages/shopping-cart-page/shopping-car
     MatTabsModule,
     BrowserAnimationsModule,
     MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    MatInputModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
