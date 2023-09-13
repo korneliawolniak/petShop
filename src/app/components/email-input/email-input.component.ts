@@ -8,7 +8,7 @@ import {distinctUntilChanged, map} from "rxjs";
   styleUrls: ['./email-input.component.scss']
 })
 export class EmailInputComponent implements OnChanges {
-  emailFormControl = new FormControl<string>('', [Validators.required, Validators.email]);
+  public emailFormControl = new FormControl<string>('', [Validators.required, Validators.email]);
   @Input() isSent?: boolean;
   @Output() emailValidityChange = new EventEmitter<boolean>();
 
@@ -23,7 +23,7 @@ export class EmailInputComponent implements OnChanges {
       });
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['isSent'] && changes['isSent'].currentValue === true) {
       this.emailFormControl.reset('');
     }

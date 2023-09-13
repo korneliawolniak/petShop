@@ -15,14 +15,14 @@ export class ContactFormComponent {
   constructor(private _snackBar: MatSnackBar) {
   }
 
-  openSnackBar() {
+  public openSnackBar(): void {
     this._snackBar.openFromComponent(AlertComponent, {
       duration: 3000,
     });
     this.isSent = true;
   }
 
-  handleValidEmailEntered(valid: boolean) {
+  public handleValidEmailEntered(valid: boolean): void {
     this.isActive = valid;
   }
 }

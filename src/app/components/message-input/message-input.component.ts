@@ -9,7 +9,7 @@ export class MessageInputComponent implements OnChanges {
   @Input() isSent?: boolean;
   public message = '';
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['isSent'] && changes['isSent'].currentValue === true) {
       this.message = '';
     }
