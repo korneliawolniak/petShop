@@ -26,6 +26,8 @@ import {MessageInputComponent} from './components/message-input/message-input.co
 import {MatButtonModule} from "@angular/material/button";
 import {AlertComponent} from './components/alert/alert.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {SideNavComponent} from './components/side-nav/side-nav.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     ContactFormComponent,
     EmailInputComponent,
     MessageInputComponent,
-    AlertComponent
+    AlertComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatButtonModule,
     MatSnackBarModule,
     FormsModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

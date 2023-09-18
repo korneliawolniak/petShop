@@ -39,10 +39,6 @@
   --mat-tab-header-inactive-focus-label-text-color: black;
 }
 
-.mat-mdc-tab-link:focus {
-  border-bottom: 1px solid black;
-}
-
 .material-icons {
   font-size: 40px;
 }
@@ -50,4 +46,8 @@
 .mat-icon {
   height: 40px;
   width: 40px;
+}
+
+a.active {
+  border-bottom: 1px solid black;
 }
