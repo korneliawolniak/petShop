@@ -1,20 +1,28 @@
+@import 'src/app/styles/colors.scss';
+
+$icon-size: 40px;
+$logo-font-size: 50px;
+$container-height: 100px;
+$container-padding: 20px;
+$container-box-shadow: 0 0 41px -4px rgba(0, 0, 0, 0.2);
+
 .header {
   &__container {
     width: 100%;
-    height: 100px;
-    background: #FFF;
-    box-shadow: 0 0 41px -4px rgba(0, 0, 0, 0.2);
+    height: $container-height;
+    background: $white;
+    box-shadow: $container-box-shadow;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
-    padding: 20px;
+    padding: $container-padding;
     z-index: 10;
   }
 
   &__logo {
     flex: 1;
-    font-size: 50px;
+    font-size: $logo-font-size;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,14 +48,14 @@
 }
 
 .material-icons {
-  font-size: 40px;
+  font-size: $icon-size;
 }
 
 .mat-icon {
-  height: 40px;
-  width: 40px;
+  height: $icon-size;
+  width: $icon-size;
 }
 
 a.active {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
 }

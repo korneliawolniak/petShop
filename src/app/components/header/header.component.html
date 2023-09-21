@@ -7,9 +7,9 @@
     </svg>
   </div>
   <div class="header__navbar">
-    <nav mat-tab-nav-bar>
-      <a [class.active]="isActive('/about')"
-         mat-tab-link routerLink="/about">
+    <nav [tabPanel]="tabPanel" mat-tab-nav-bar>
+      <a [class.active]="isActive('/')"
+         mat-tab-link routerLink="/">
         About Us
       </a>
       <a [class.active]="isActive('/dog')"
@@ -25,6 +25,7 @@
         Contact
       </a>
     </nav>
+    <mat-tab-nav-panel #tabPanel/>
   </div>
   <div class="header__shopping-cart" routerLink="/shopping-cart">
     <mat-icon matBadge="3" matBadgeColor="warn">shopping_cart</mat-icon>

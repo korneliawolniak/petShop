@@ -1,0 +1,109 @@
+@import 'src/app/styles/colors.scss';
+
+$nav-li-a-padding: 20px;
+$nav-li-a-left-border: 5px solid;
+
+.container {
+  width: 15%;
+  height: 100%;
+  background: $light-grey;
+}
+
+.nav-item {
+  position: fixed;
+  width: 15%;
+}
+
+.nav-item ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item li {
+  float: none;
+  width: 100%;
+}
+
+.nav-item li a {
+  display: block;
+  width: 100%;
+  padding: $nav-li-a-padding;
+  border-left: $nav-li-a-left-border;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: $grey;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.nav-item li a:hover {
+  border-bottom: 0;
+  color: $white;
+}
+
+.nav-item li:first-child a {
+  border-left: 10px solid $light-pink;
+}
+
+.nav-item li:nth-child(2) a {
+  border-left: 10px solid $light-blue;
+}
+
+.nav-item li:nth-child(3) a {
+  border-left: 10px solid $yellow;
+}
+
+.nav-item li:nth-child(4) a {
+  border-left: 10px solid $purple;
+}
+
+.nav-item li:nth-child(5) a {
+  border-left: 10px solid $green;
+}
+
+.nav-item li:last-child a {
+  border-left: 10px solid #FA9F42;
+}
+
+.nav-item li a:after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+.nav-item li a:hover:after {
+  width: 100%;
+}
+
+.nav-item li:first-child a:after {
+  background: $light-pink;
+}
+
+.nav-item li:nth-child(2) a:after {
+  background: $light-blue;
+}
+
+.nav-item li:nth-child(3) a:after {
+  background: $yellow;
+}
+
+.nav-item li:nth-child(4) a:after {
+  background: $purple;
+}
+
+.nav-item li:nth-child(5) a:after {
+  background: $green;
+}
+
+.nav-item li:last-child a:after {
+  background: $orange;
+}

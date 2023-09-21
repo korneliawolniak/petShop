@@ -1,0 +1,35 @@
+$container-padding: 50px 300px 50px 70px;
+$section-margin-bottom: 40px;
+$h1-font-size: 40px;
+$h2-font-weight: 400;
+$p-font-size: 18px;
+$p-font-weight: 200;
+$ul-font-size: 17px;
+$ul-font-weight: 200;
+
+.container {
+  width: 100%;
+  padding: $container-padding;
+
+  section {
+    margin-bottom: $section-margin-bottom;
+
+    h1 {
+      font-size: $h1-font-size;
+    }
+
+    h2 {
+      font-weight: $h2-font-weight;
+    }
+
+    p {
+      font-size: $p-font-size;
+      font-weight: $p-font-weight;
+    }
+
+    ul {
+      font-size: $ul-font-size;
+      font-weight: $ul-font-weight;
+    }
+  }
+}

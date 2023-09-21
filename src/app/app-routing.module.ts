@@ -1,17 +1,27 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AboutUsPageComponent} from "./pages/about-us-page/about-us-page.component";
-import {SalePageComponent} from "./pages/sale-page/sale-page.component";
-import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
-import {ShoppingCartPageComponent} from "./pages/shopping-cart-page/shopping-cart-page.component";
 
 const routes: Routes = [
-  {path: '', component: AboutUsPageComponent},
-  {path: 'about', component: AboutUsPageComponent},
-  {path: 'dog', component: SalePageComponent},
-  {path: 'cat', component: SalePageComponent},
-  {path: 'contact', component: ContactPageComponent},
-  {path: 'shopping-cart', component: ShoppingCartPageComponent}
+  {
+    path: '',
+    loadChildren: () => import('./modules/feature-about-us/feature.about-us.module').then(m => m.FeatureAboutUsModule)
+  },
+  {
+    path: 'dog',
+    loadChildren: () => import('./modules/feature-sale/feature.sale.module').then(m => m.FeatureSaleModule)
+  },
+  {
+    path: 'cat',
+    loadChildren: () => import('./modules/feature-sale/feature.sale.module').then(m => m.FeatureSaleModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./modules/feature-contact/feature.contact.module').then(m => m.FeatureContactModule)
+  },
+  {
+    path: 'shopping-cart',
+    loadChildren: () => import('./modules/feature-shopping-cart/feature.shopping-cart.module').then(m => m.FeatureShoppingCartModule)
+  },
 ];
 
 @NgModule({
