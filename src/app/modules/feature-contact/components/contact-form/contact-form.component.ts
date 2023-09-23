@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AlertComponent} from "../../../../shared/components/alert/alert.component";
-import {EmailInputComponent} from "../email-input/email-input.component";
-import {MessageInputComponent} from "../message-input/message-input.component";
 import {MatButtonModule} from "@angular/material/button";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
@@ -12,8 +10,6 @@ import {MatInputModule} from "@angular/material/input";
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
   imports: [
-    EmailInputComponent,
-    MessageInputComponent,
     MatButtonModule,
     ReactiveFormsModule,
     MatInputModule
