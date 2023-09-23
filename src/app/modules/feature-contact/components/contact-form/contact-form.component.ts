@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AlertComponent} from "../../../../shared/components/alert/alert.component";
 import {EmailInputComponent} from "../email-input/email-input.component";
 import {MessageInputComponent} from "../message-input/message-input.component";
 import {MatButtonModule} from "@angular/material/button";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-contact-form',
@@ -13,25 +15,34 @@ import {MatButtonModule} from "@angular/material/button";
     EmailInputComponent,
     MessageInputComponent,
     MatButtonModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   standalone: true
 })
-export class ContactFormComponent {
+export class ContactFormComponent implements OnInit {
 
   public isActive = false;
   public isSent = false;
+  public contactForm!: FormGroup;
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private _snackBar: MatSnackBar,
+              private fb: FormBuilder) {
   }
 
-  public openSnackBar(): void {
-    this._snackBar.openFromComponent(AlertComponent, {
-      duration: 3000,
+  ngOnInit(): void {
+    this.contactForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required],
     });
-    this.isSent = true;
   }
 
-  public handleValidEmailEntered(valid: boolean): void {
-    this.isActive = valid;
+  public onSubmit(): void {
+    if (this.contactForm?.valid) {
+      this._snackBar.openFromComponent(AlertComponent, {
+        duration: 3000,
+      });
+      this.isSent = true;
+    }
   }
 }

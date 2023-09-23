@@ -2,12 +2,16 @@
   <h1>If you have any questions or feedback, please fill out the form below, and we'll get back to you as soon as
     possible:</h1>
   <div class="form-box">
-    <form class="form">
-      <app-email-input (emailValidityChange)="handleValidEmailEntered($event)"
-                       [isSent]="isSent">
-      </app-email-input>
-      <app-message-input [isSent]="isSent"></app-message-input>
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="form">
+      <mat-form-field class="full-width">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" id="email" matInput placeholder="example@example.com" type="email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea formControlName="message" id="message" matInput type="text"></textarea>
+      </mat-form-field>
+      <button [disabled]="contactForm.invalid" mat-raised-button type="submit">Send</button>
     </form>
   </div>
-  <button (click)="openSnackBar()" [disabled]="!isActive" mat-raised-button>Send</button>
 </div>
