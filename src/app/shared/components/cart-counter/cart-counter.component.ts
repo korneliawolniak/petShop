@@ -20,20 +20,12 @@ export class CartCounterComponent {
   }
 
   public decrementValue(): void {
-    if (this.value > 1) {
-      this.value -= 1;
-    } else {
-      this.value = 0;
-    }
+    this.value = this.value > 1 ? this.value - 1 : 0;
     this.emitQuantity();
   }
 
   public incrementValue(): void {
-    if (this.value < 100) {
-      this.value += 1;
-    } else {
-      this.value = 100;
-    }
+    this.value = this.value < 100 ? this.value + 1 : 100;
     this.emitQuantity();
   }
 
