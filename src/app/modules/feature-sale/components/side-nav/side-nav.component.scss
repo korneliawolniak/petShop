@@ -1,10 +1,9 @@
 @import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
 
-$nav-li-a-padding: 20px;
-$nav-li-a-left-border: 5px solid;
 
 .container {
-  width: 210px;
+  width: $side-nav-container-width;
   height: 100%;
   background: $light-grey;
 }

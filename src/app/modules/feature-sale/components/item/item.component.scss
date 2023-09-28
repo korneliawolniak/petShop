@@ -1,3 +1,35 @@
-.container {
-  
+.card {
+  .content {
+    display: flex;
+
+    .img-container {
+      width: 15%;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+    }
+
+    .description-container {
+      width: 85%;
+
+      .description {
+        .info {
+          width: 70%;
+
+        }
+
+        .action-box {
+          width: 30%;
+        }
+
+      }
+
+    }
+
+  }
+
 }
+

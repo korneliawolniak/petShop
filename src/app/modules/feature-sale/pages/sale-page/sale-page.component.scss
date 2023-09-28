@@ -1,7 +1,7 @@
-$container-height: 100vh;
+@import 'src/app/styles/fonts.scss';
 
 .container {
   width: 100%;
-  height: $container-height;
+  height: $sale-page-container-height;
   display: flex;
 }

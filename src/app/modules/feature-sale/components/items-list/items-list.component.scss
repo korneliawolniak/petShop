@@ -1,4 +1,9 @@
-$container-padding: 40px;
+@import 'src/app/styles/fonts.scss';
+
+:host {
+  width: 100%;
+}
+
 .container {
-  padding: $container-padding;
+  padding: $items-list-container-padding;
 }

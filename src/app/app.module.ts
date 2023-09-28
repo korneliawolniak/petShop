@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {RouterModule} from "@angular/router";
 import {HeaderComponent} from "./components/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserModule} from "@angular/platform-browser";
@@ -12,12 +11,12 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule,
     HeaderComponent,
     AppRoutingModule,
     NoopAnimationsModule,
   ],
   providers: [MatSnackBar],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

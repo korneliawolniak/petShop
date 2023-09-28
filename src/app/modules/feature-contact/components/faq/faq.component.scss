@@ -1,5 +1,5 @@
-$container-width: 50vw;
+@import 'src/app/styles/fonts.scss';
 
 .container {
-  width: $container-width;
+  width: $faq-container-width;
 }

@@ -1,22 +1,19 @@
 @import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
 
-$icon-size: 40px;
-$logo-size: 50px;
-$container-height: 100px;
-$container-padding: 20px;
 $container-box-shadow: 0 0 41px -4px rgba(0, 0, 0, 0.2);
 
 .header {
   &__container {
     width: 100%;
-    height: $container-height;
+    height: $header-container-height;
     background: $white;
     box-shadow: $container-box-shadow;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
-    padding: $container-padding;
+    padding: $header-container-padding;
     z-index: 10;
   }
 
