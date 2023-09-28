@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .quantity {
+    input {
+      -webkit-appearance: none;
+      border: none;
+      text-align: center;
+      width: 32px;
+      font-size: 16px;
+      color: #43484D;
+      font-weight: 300;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    button[class*=btn] {
+      width: 30px;
+      height: 30px;
+      background-color: #E1E8EE;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover {
+        background: #cdd4da;
+      }
+    }
+
+    .minus-btn,
+    .plus-btn {
+      img {
+      }
+    }
+  }
+
+  .price {
+
+  }
+}

@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
-import {AppModule} from "../../../../app.module";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
 
 @Component({
@@ -9,11 +8,15 @@ import {CartCounterComponent} from "../../../../shared/components/cart-counter/c
   styleUrls: ['./item.component.scss'],
   imports: [
     MatCardModule,
-    AppModule,
     CartCounterComponent
   ],
   standalone: true
 })
 export class ItemComponent {
+  public currentAmount: number = 1;
+
+  public handleQuantityChange(amount: number): void {
+    this.currentAmount = amount;
+  }
 
 }

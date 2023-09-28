@@ -4,6 +4,9 @@
 
     .img-container {
       width: 15%;
+      align-self: center;
+      text-align: center;
+
 
       img {
         width: 100px;
@@ -16,6 +19,8 @@
       width: 85%;
 
       .description {
+        display: flex;
+
         .info {
           width: 70%;
 
@@ -23,6 +28,8 @@
 
         .action-box {
           width: 30%;
+          align-self: center;
+          text-align: center;
         }
 
       }
