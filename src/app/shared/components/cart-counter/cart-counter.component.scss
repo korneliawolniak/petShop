@@ -1,3 +1,6 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -8,9 +11,9 @@
       -webkit-appearance: none;
       border: none;
       text-align: center;
-      width: 32px;
-      font-size: 16px;
-      color: #43484D;
+      width: $cart-counter-input-width;
+      font-size: $cart-counter-font-size;
+      color: $grey;
       font-weight: 300;
 
       &:focus {
@@ -19,9 +22,9 @@
     }
 
     button[class*=btn] {
-      width: 30px;
-      height: 30px;
-      background-color: #E1E8EE;
+      width: $cart-counter-button-width;
+      height: $cart-counter-button-height;
+      background-color: $very-light-grey;
       border-radius: 6px;
       border: none;
       cursor: pointer;
@@ -31,7 +34,7 @@
       }
 
       &:hover {
-        background: #cdd4da;
+        background: $light-grey;
       }
     }
 
@@ -43,6 +46,7 @@
   }
 
   .price {
+    font-size: $cart-counter-price-font-size;
 
   }
 }

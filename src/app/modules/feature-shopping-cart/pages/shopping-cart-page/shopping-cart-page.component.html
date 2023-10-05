@@ -1,1 +1,5 @@
-<p>shopping-cart-page works!</p>
+<ng-container *ngIf="emptyCart; else itemsInCart">
+  <app-empty-cart></app-empty-cart>
+</ng-container>
+<ng-template #itemsInCart>
+</ng-template>

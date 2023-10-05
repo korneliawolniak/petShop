@@ -1,3 +1,5 @@
+@import 'src/app/styles/fonts.scss';
+
 .card {
   .content {
     display: flex;
@@ -7,12 +9,10 @@
       align-self: center;
       text-align: center;
 
-
       img {
-        width: 100px;
-        height: 100px;
+        width: $item-image-size;
+        height: $item-image-size;
       }
-
     }
 
     .description-container {
@@ -23,20 +23,21 @@
 
         .info {
           width: 70%;
-
         }
 
         .action-box {
           width: 30%;
-          align-self: center;
-          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          button {
+            width: 100px;
+            align-self: center;
+          }
         }
-
       }
-
     }
-
   }
-
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-shopping-cart-page',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-cart-page.component.scss']
 })
 export class ShoppingCartPageComponent {
+  public emptyCart = true;
 
 }

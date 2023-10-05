@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-item',
@@ -8,7 +9,8 @@ import {CartCounterComponent} from "../../../../shared/components/cart-counter/c
   styleUrls: ['./item.component.scss'],
   imports: [
     MatCardModule,
-    CartCounterComponent
+    CartCounterComponent,
+    MatButtonModule
   ],
   standalone: true
 })
