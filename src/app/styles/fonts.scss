@@ -1,4 +1,5 @@
-//general
+@import "src/app/styles/colors.scss"; //general
+
 $h1-font-size: 2.5rem;
 $medium-font-weight: 400;
 $p-font-size: 1.15rem;
@@ -40,16 +41,63 @@ $side-nav-container-width: 13.15rem;
 $sale-page-container-height: 100vh;
 
 //cart-counter
-$cart-counter-input-width: 32px;
-$cart-counter-font-size: 16px;
-$cart-counter-price-font-size: 30px;
-$cart-counter-button-height: 30px;
-$cart-counter-button-width: 30px;
+$cart-counter-input-width: 2rem;
+$cart-counter-font-size: 1rem;
+$cart-counter-price-font-size: 1.85rem;
+$cart-counter-button-height: 1.85rem;
+$cart-counter-button-width: 1.85rem;
 
 //item
-$item-image-size: 100px;
+$item-image-size: 6.25rem;
 
 //empty-cart
-$empty-cart-container-padding-top: 100px;
-$empty-cart-img-size: 100px;
-$empty-cart-margin: 20px;
+$empty-cart-container-padding-top: 6.25rem;
+$empty-cart-img-size: 6.25rem;
+$empty-cart-margin: 1.25rem;
+
+//cart
+$cart-container-padding-top: 3.125rem;
+$cart-steps-circle-size: 2.5rem;
+$light-grey-steps-label: 0.85rem;
+$light-grey-steps-label-margin: 0.3rem;
+
+//customer-data
+$shipping-info-margin: 3.15rem;
+$shipping-section-margin: 3.15rem 0 3.15rem 6.25rem;
+$shipping-section-header: 1.65rem;
+$shipping-section-header-margin: 1.85rem;
+$shipping-section-radio-list-gap: 1.25rem;
+$payment-method-section-gap: 1.25rem;
+$payment-method-section-padding-bottom: 5.65rem;
+$payment-method-section-header-font-size: 1.65rem;
+$payment-method-section-header-margin-bottom: 1.65rem;
+$payment-method-border: 1px solid $off-white;
+$payment-method-padding: 0.6rem;
+$payment-method-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+$payment-method-box-shadow-selected: 0 5px 15px rgba(0, 0, 0, 0.5);
+$payment-method-button-height: 3.15rem;
+$payment-method-button-margin-right: 1.25rem;
+$payment-method-radio-button-font-size: 1.35rem;
+
+//summary
+$table-container-padding-bottom: 5rem;
+$table-margin-top: 3.15rem;
+$table-thead-th-padding: 0.6rem 0.9rem;
+$table-thead-th-border: 1px solid $light-grey2-hover;
+$table-tbody-tr-td-padding: 0.6rem 0.9rem;
+$table-tbody-tr-td-border: 1px solid $light-grey2-hover;
+$table-tbody-tr-td-max-width: 7.5rem;
+$table-tbody-tr-td-max-height: 6.25rem;
+$table-tbody-tr-td-first-child: 18.75rem;
+$table-tbody-img-size: 3.15rem;
+$table-tbody-img-margin-right: 0.6rem;
+$table-product-name-font-size: 1.25rem;
+$table-product-button-padding: 0.3rem 0.6rem;
+$table-product-button-margin: 0 0.3rem;
+$table-product-p-margin: 0.3rem 0;
+$table-product-p-font-size: 0.9rem;
+$table-product-price-font-size: 1.5rem;
+$table-product-quantity-font-size: 1.5rem;
+$summary-container-button-bottom: 0;
+$summary-container-button-right: 4.35rem;
+

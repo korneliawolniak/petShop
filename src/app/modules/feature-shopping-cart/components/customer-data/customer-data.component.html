@@ -1,0 +1,61 @@
+<div class="shipping-info-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+    <div class="customer-data">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" id="name" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Surname:</mat-label>
+        <input formControlName="surname" id="surname" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Address:</mat-label>
+        <input formControlName="address" id="address" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Zip Code:</mat-label>
+        <input formControlName="zipCode" id="zipCode" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>City:</mat-label>
+        <input formControlName="city" id="city" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Country:</mat-label>
+        <input formControlName="country" id="country" matInput required/>
+      </mat-form-field>
+    </div>
+
+
+    <div class="shipping-section">
+      <h1 class="header">Delivery Option</h1>
+      <mat-radio-group
+        class="radio-list"
+        formControlName="deliveryOption">
+        <mat-radio-button *ngFor="let delivery of deliveries" [value]="delivery" class="delivery-radio-button" required>
+          {{delivery}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="payment-method-section">
+      <h1 class="header"> Payment Method</h1>
+      <div (click)="selectPaymentMethod(method.name)"
+           *ngFor="let method of paymentMethods"
+           [ngClass]="{'selected': selectedPaymentMethod === method.name}"
+           class="payment-method">
+        <img [alt]="method.name" [src]="'assets/' + method.image">
+      </div>
+      <button [disabled]="customerForm.invalid || !selectedPaymentMethod" mat-raised-button type="submit">
+        Confirm Order
+      </button>
+    </div>
+
+  </form>
+</div>

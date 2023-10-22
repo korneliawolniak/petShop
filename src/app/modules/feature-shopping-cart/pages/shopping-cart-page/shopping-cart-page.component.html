@@ -1,5 +1,6 @@
-<ng-container *ngIf="emptyCart; else itemsInCart">
+<ng-container *ngIf="false; else itemsInCart">
   <app-empty-cart></app-empty-cart>
 </ng-container>
 <ng-template #itemsInCart>
+  <app-cart></app-cart>
 </ng-template>

@@ -5,6 +5,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
     HeaderComponent,
     AppRoutingModule,
     NoopAnimationsModule,
+    HttpClientModule
   ],
   providers: [MatSnackBar],
   exports: [],
