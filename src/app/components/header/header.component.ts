@@ -32,10 +32,10 @@ export class HeaderComponent {
     {label: 'Contact', routerLink: '/contact'}
   ];
 
-  constructor(private router: Router) {
+  constructor(private readonly router: Router) {
   }
 
-  isActive(route: string): boolean {
+  public isActive(route: string): boolean {
     return this.router.url === route;
   }
 }

@@ -4,6 +4,7 @@ import {CartCounterComponent} from "../../../../shared/components/cart-counter/c
 import {MatButtonModule} from "@angular/material/button";
 import {CustomerService} from "../../services/customer.service";
 import {Router} from "@angular/router";
+import {Product} from "../../models/product.model";
 
 @Component({
   selector: 'app-summary',
@@ -19,7 +20,7 @@ import {Router} from "@angular/router";
 export class SummaryComponent {
   public currentAmount: number = 1;
 
-  product = {
+  product: Product = {
     name: 'Smycz długa',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 50,
@@ -27,21 +28,17 @@ export class SummaryComponent {
     src: 'assets/meat.svg'
   };
 
-  constructor(private customerService: CustomerService,
-              private router: Router) {
+  constructor(private readonly customerService: CustomerService,
+              private readonly router: Router) {
   }
 
   public handleQuantityChange(amount: number): void {
     this.currentAmount = amount;
   }
 
-  public onSubmit() {
+  public onSubmit(): void {
     this.customerService.sendProduct(this.product);
     this.router.navigate(['shopping-cart/shipping-information']);
-
-    // this.customerService.submitProduct(product).subscribe((response) => {
-    //   console.log('Product submitted successfully!', response);
-    // });
   }
 
 }

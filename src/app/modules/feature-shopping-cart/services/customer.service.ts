@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {Customer} from "../models/customer.model";
 import {BehaviorSubject} from "rxjs";
+import {CustomerApiService} from "./customer-api.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,11 @@ export class CustomerService {
   private customerSubject = new BehaviorSubject(null);
   public customer$ = this.customerSubject.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly customerApiService: CustomerApiService) {
   }
 
   public submitProduct(customer: Customer) {
-    const apiUrl = 'http://example.com/api/products';
-    return this.http.post(apiUrl, customer);
+    this.customerApiService.submitProduct(customer);
   }
 
   public sendProduct(data: any) {

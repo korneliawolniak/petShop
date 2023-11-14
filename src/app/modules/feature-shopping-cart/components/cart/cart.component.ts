@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, DoCheck} from '@angular/core';
 import {MatTabsModule} from "@angular/material/tabs";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {SummaryComponent} from "../summary/summary.component";
@@ -22,7 +22,7 @@ import {Router, RouterOutlet} from "@angular/router";
   ],
   standalone: true
 })
-export class CartComponent implements OnInit, DoCheck {
+export class CartComponent implements DoCheck {
 
   public currentUrl?: string;
   public steps = [
@@ -31,14 +31,10 @@ export class CartComponent implements OnInit, DoCheck {
     {label: 'Payment', route: 'payment'},
   ];
 
-  constructor(private router: Router) {
-
+  constructor(private readonly router: Router) {
   }
 
-  ngOnInit() {
-  }
-
-  ngDoCheck() {
+  public ngDoCheck(): void {
     const partsUrl = this.router.url.split('/')
     this.currentUrl = partsUrl[partsUrl.length - 1]
   }

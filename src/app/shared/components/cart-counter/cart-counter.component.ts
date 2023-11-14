@@ -11,21 +11,18 @@ import {FormsModule} from "@angular/forms";
   standalone: true
 })
 export class CartCounterComponent {
-  public value: number = 1;
   @Output() amount: EventEmitter<number> = new EventEmitter<number>();
-  private unitPrice: number = 30;
-
-  get totalPrice(): number {
-    return this.value * this.unitPrice;
-  }
+  public value: number = 1;
 
   public decrementValue(): void {
-    this.value = this.value > 1 ? this.value - 1 : 0;
+    if (this.value === 1) return;
+    this.value--
     this.emitQuantity();
   }
 
   public incrementValue(): void {
-    this.value = this.value < 100 ? this.value + 1 : 100;
+    if (this.value >= 100) return;
+    this.value++;
     this.emitQuantity();
   }
 

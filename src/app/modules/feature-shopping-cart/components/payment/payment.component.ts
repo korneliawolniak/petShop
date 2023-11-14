@@ -13,10 +13,10 @@ export class PaymentComponent implements OnInit {
   public product: any;
   public customer?: Customer | null;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private readonly customerService: CustomerService) {
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.customerService.product$.subscribe(data => this.product = data);
     this.customerService.customer$.subscribe(data => this.customer = data);
   }

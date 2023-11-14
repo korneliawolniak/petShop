@@ -42,9 +42,9 @@ export class CustomerDataComponent {
   ];
   public selectedPaymentMethod?: string | null = null;
 
-  constructor(private fb: FormBuilder,
-              private customerService: CustomerService,
-              private router: Router) {
+  constructor(private readonly fb: FormBuilder,
+              private readonly customerService: CustomerService,
+              private readonly router: Router) {
     this.customerForm = this.fb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
@@ -58,13 +58,13 @@ export class CustomerDataComponent {
   }
 
 
-  public selectPaymentMethod(method: string) {
+  public selectPaymentMethod(method: string): void {
     this.customerForm.get('paymentMethod')?.setValue(method);
     this.selectedPaymentMethod = this.customerForm.value.paymentMethod === method ? null : method;
     this.selectedPaymentMethod = this.selectedPaymentMethod === method ? null : method;
   }
 
-  public onSubmit() {
+  public onSubmit(): void {
     const customer = new Customer(
       this.customerForm?.value.name,
       this.customerForm?.value.surname,

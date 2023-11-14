@@ -14,18 +14,17 @@ import {Router} from "@angular/router";
 export class ItemsListComponent implements OnInit {
   public pageTitle?: string;
 
-  constructor(private router: Router) {
+  constructor(private readonly router: Router) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.pageTitle = this.transformPathToTitle(this.router.url)
 
   }
 
   private transformPathToTitle(path: string): string {
     const trimmedPath = path.replace('/', '');
-    const transformedName = trimmedPath.charAt(0).toUpperCase() + trimmedPath.slice(1);
-    return transformedName;
+    return trimmedPath.charAt(0).toUpperCase() + trimmedPath.slice(1);
   }
 
 
