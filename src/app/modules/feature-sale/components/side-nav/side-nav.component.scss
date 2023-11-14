@@ -1,0 +1,71 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+
+
+.container {
+  width: $side-nav-container-width;
+  height: 100%;
+  background: $very-light-grey;
+}
+
+.nav-item {
+  position: fixed;
+  width: 15%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    float: none;
+    width: 100%;
+
+    a {
+      display: block;
+      width: 100%;
+      padding: $nav-li-a-padding;
+      border-left: $nav-li-a-left-border;
+      position: relative;
+      z-index: 2;
+      text-decoration: none;
+      color: $grey;
+      box-sizing: border-box;
+
+      &:hover {
+        border-bottom: 0;
+        color: $white;
+      }
+
+      &:after {
+        content: "";
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 0;
+        position: absolute;
+        transition: all 0.3s ease 0s;
+        z-index: -1;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+
+  $colors: $light-pink, $light-blue, $yellow, $purple, $green, $orange;
+
+  @each $color in $colors {
+    $i: index($colors, $color);
+
+    li:nth-child(#{$i}) a {
+      border-left: 10px solid $color;
+
+      &:after {
+        background: $color;
+      }
+    }
+  }
+}

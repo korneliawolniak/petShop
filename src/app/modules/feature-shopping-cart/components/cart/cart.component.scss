@@ -1,0 +1,50 @@
+@import "src/app/styles/fonts.scss";
+@import "src/app/styles/colors.scss";
+
+.container {
+  padding-top: $cart-container-padding-top;
+
+  .steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      .circle {
+        width: $cart-steps-circle-size;
+        height: $cart-steps-circle-size;
+        border-radius: 50%;
+        background-color: $light-grey2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: $light-grey2-hover;
+        }
+      }
+
+      &.active .circle {
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+          background-color: $black;
+        }
+      }
+
+      .label {
+        font-size: $light-grey-steps-label;
+        margin-top: $light-grey-steps-label-margin;
+      }
+    }
+  }
+}
+

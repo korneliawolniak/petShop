@@ -1,0 +1,8 @@
+@import 'src/app/styles/fonts.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $faq-list-container-padding-top;
+}

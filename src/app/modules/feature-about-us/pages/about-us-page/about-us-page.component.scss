@@ -1,0 +1,28 @@
+@import 'src/app/styles/fonts.scss';
+
+.container {
+  width: 100%;
+  padding: $about-us-container-padding;
+
+  section {
+    margin-bottom: $about-us-section-margin-bottom;
+
+    h1 {
+      font-size: $h1-font-size;
+    }
+
+    h2 {
+      font-weight: $medium-font-weight;
+    }
+
+    p {
+      font-size: $p-font-size;
+      font-weight: $p-font-weight;
+    }
+
+    ul {
+      font-size: $ul-font-size;
+      font-weight: $ul-font-weight;
+    }
+  }
+}

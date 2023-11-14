@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="quantity">
+    <button (click)="decrementValue()" class="minus-btn" type="button">
+      <img alt="minus" src="assets/minus.svg"/>
+    </button>
+    <input [(ngModel)]="value" name="name" type="text">
+    <button (click)="incrementValue()" class="plus-btn" type="button">
+      <img alt="plus" src="assets/plus.svg"/>
+    </button>
+  </div>
+</div>

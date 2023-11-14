@@ -1,0 +1,92 @@
+@import "src/app/styles/fonts.scss";
+@import "src/app/styles/colors.scss";
+
+.shipping-info-container {
+  display: flex;
+
+  form {
+    display: flex;
+
+    .customer-data {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: $shipping-info-margin;
+    }
+
+    .shipping-section {
+      flex: 1;
+      margin: $shipping-section-margin;
+
+      .header {
+        font-size: $shipping-section-header;
+        margin-bottom: $shipping-section-header-margin;
+      }
+
+      .radio-list {
+        display: flex;
+        flex-direction: column;
+        gap: $shipping-section-radio-list-gap;
+      }
+
+    }
+
+    .payment-method-section {
+      margin: $shipping-info-margin;
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $payment-method-section-gap;
+      position: relative;
+      padding-bottom: $payment-method-section-padding-bottom;
+
+      .header {
+        font-size: $payment-method-section-header-font-size;
+        margin-bottom: $payment-method-section-header-margin-bottom;
+        width: 100%;
+
+      }
+
+      .payment-method {
+        border: $payment-method-border;
+        padding: $payment-method-padding;
+        width: calc(33.33% - 20px);
+        text-align: center;
+        box-shadow: $payment-method-box-shadow;
+        align-self: center;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+        &:hover, &.selected {
+          box-shadow: $payment-method-box-shadow-selected;
+          transform: translateY(-5px);
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $payment-method-button-height;
+        margin-right: $payment-method-button-margin-right;
+      }
+    }
+  }
+}
+
+
+::ng-deep .mat-mdc-radio-button .mdc-form-field {
+  font-size: $payment-method-radio-button-font-size !important;
+}
+
+::ng-deep .mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: $blue;
+  --mdc-radio-selected-hover-icon-color: $blue;
+  --mdc-radio-selected-icon-color: $blue;
+  --mdc-radio-selected-pressed-icon-color: $blue;
+  --mat-radio-checked-ripple-color: $blue;
+}

@@ -1,0 +1,62 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+
+$container-box-shadow: 0 0 41px -4px rgba(0, 0, 0, 0.2);
+
+.header {
+  &__container {
+    width: 100%;
+    height: $header-container-height;
+    background: $white;
+    box-shadow: $container-box-shadow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: $header-container-padding;
+    z-index: 10;
+  }
+
+  &__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: $logo-size;
+      height: $logo-size;
+    }
+  }
+
+  &__navbar {
+    flex: 3;
+    align-self: center;
+  }
+
+  &__shopping-cart {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mat-tab-header-inactive-ripple-color: white;
+  --mat-tab-header-inactive-hover-label-text-color: black;
+  --mat-tab-header-inactive-focus-label-text-color: black;
+}
+
+.material-icons {
+  font-size: $icon-size;
+}
+
+.mat-icon {
+  height: $icon-size;
+  width: $icon-size;
+}
+
+a.active {
+  border-bottom: 1px solid $black;
+}

@@ -1,0 +1,46 @@
+<div class="summary-container">
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Items</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <div class="item">
+            <img alt="{{ product.name }}" src="{{ product.src }}">
+            <div class="description">
+              <p class="product-name">{{ product.name }}</p>
+              <p class="product-info">{{ product.description }}</p>
+            </div>
+          </div>
+
+        </td>
+        <td>
+          <p class="price">
+            {{ product.price | currency:'PLN' }}
+          </p>
+        </td>
+        <td>
+          <div class="quantity">
+            <app-cart-counter (amount)="handleQuantityChange($event)"></app-cart-counter>
+          </div>
+        </td>
+        <td>
+          <p class="price">
+            {{ product.price * currentAmount | currency:'PLN' }}
+          </p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="onSubmit()" mat-raised-button>
+    Continue to Shipping
+  </button>
+</div>

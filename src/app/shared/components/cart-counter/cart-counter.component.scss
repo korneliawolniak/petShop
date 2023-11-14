@@ -1,0 +1,52 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .quantity {
+    input {
+      -webkit-appearance: none;
+      border: none;
+      text-align: center;
+      width: $cart-counter-input-width;
+      font-size: $cart-counter-font-size;
+      color: $grey;
+      font-weight: 300;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    button[class*=btn] {
+      width: $cart-counter-button-width;
+      height: $cart-counter-button-height;
+      background-color: $very-light-grey;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover {
+        background: $light-grey;
+      }
+    }
+
+    .minus-btn,
+    .plus-btn {
+      img {
+      }
+    }
+  }
+
+  .price {
+    font-size: $cart-counter-price-font-size;
+
+  }
+}
