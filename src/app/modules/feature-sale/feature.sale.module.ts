@@ -3,12 +3,18 @@ import {RouterModule, Routes} from "@angular/router";
 import {SalePageComponent} from "./pages/sale-page/sale-page.component";
 import {SideNavComponent} from "./components/side-nav/side-nav.component";
 import {ItemsListComponent} from "./components/items-list/items-list.component";
+import {AsyncPipe} from "@angular/common";
 
 const routes: Routes = [
   {
     path: '',
     component: SalePageComponent,
     children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dry-food'
+      },
       {
         path: 'dry-food',
         component: SalePageComponent
@@ -42,7 +48,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     SideNavComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    AsyncPipe
   ]
 })
 export class FeatureSaleModule {

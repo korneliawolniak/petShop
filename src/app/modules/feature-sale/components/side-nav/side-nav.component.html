@@ -1,12 +1,9 @@
 <div class="container">
   <div class="nav-item">
     <ul>
-      <li (click)="onNavItemClicked('dry-food')"><a routerLink="dry-food">Dry food</a></li>
-      <li (click)="onNavItemClicked('wet-food')"><a routerLink="wet-food">Wet food</a></li>
-      <li (click)="onNavItemClicked('treats')"><a routerLink="treats">Treats</a></li>
-      <li (click)="onNavItemClicked('collars')"><a routerLink="collars">Collars</a></li>
-      <li (click)="onNavItemClicked('leashes')"><a routerLink="leashes">Leashes</a></li>
-      <li (click)="onNavItemClicked('toys')"><a routerLink="toys">Toys</a></li>
+      <li *ngFor="let category of categories">
+        <a (click)="selectCategory(category.link)" [routerLink]="category.link">{{ category.name }}</a>
+      </li>
     </ul>
   </div>
 </div>

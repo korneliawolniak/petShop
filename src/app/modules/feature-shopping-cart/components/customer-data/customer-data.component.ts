@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../../services/customer/customer.service";
 import {Customer} from "../../models/customer.model"
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";

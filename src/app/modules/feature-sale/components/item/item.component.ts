@@ -1,7 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
 import {MatButtonModule} from "@angular/material/button";
+import {NgForOf} from "@angular/common";
+import {Product} from "../../../feature-shopping-cart/models/product.model";
 
 @Component({
   selector: 'app-item',
@@ -10,11 +12,13 @@ import {MatButtonModule} from "@angular/material/button";
   imports: [
     MatCardModule,
     CartCounterComponent,
-    MatButtonModule
+    MatButtonModule,
+    NgForOf
   ],
   standalone: true
 })
 export class ItemComponent {
+  @Input() products?: Product[] | null;
   public currentAmount: number = 1;
 
   public handleQuantityChange(amount: number): void {

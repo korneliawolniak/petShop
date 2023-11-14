@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {CurrencyPipe} from "@angular/common";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
 import {MatButtonModule} from "@angular/material/button";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../../services/customer/customer.service";
 import {Router} from "@angular/router";
 import {Product} from "../../models/product.model";
 
