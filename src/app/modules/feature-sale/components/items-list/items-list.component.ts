@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ItemComponent} from "../item/item.component";
 import {Router} from "@angular/router";
+import {Products} from "../../models/products.model";
+import {NavService} from "../../services/navigation/nav.service";
 
 @Component({
   selector: 'app-items-list',
@@ -12,19 +14,19 @@ import {Router} from "@angular/router";
   standalone: true
 })
 export class ItemsListComponent implements OnInit {
-  public pageTitle?: string;
+  @Input() products?: Products;
+  @Input() pageTitle?: string;
 
-  constructor(private readonly router: Router) {
+  constructor(private readonly router: Router,
+              private readonly navService: NavService) {
   }
 
-  public ngOnInit() {
-    this.pageTitle = this.transformPathToTitle(this.router.url)
+  public ngOnInit(): void {
+    console.log('this.products', this.products)
+    this.navService.selectedItem.subscribe(item => {
+      console.log('Selected Nav Item:', item);
+    });
 
-  }
-
-  private transformPathToTitle(path: string): string {
-    const trimmedPath = path.replace('/', '');
-    return trimmedPath.charAt(0).toUpperCase() + trimmedPath.slice(1);
   }
 
 
