@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
-import {CurrencyPipe} from "@angular/common";
+import {Component, OnInit} from '@angular/core';
+import {CurrencyPipe, NgForOf} from "@angular/common";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
 import {MatButtonModule} from "@angular/material/button";
 import {CustomerService} from "../../services/customer/customer.service";
 import {Router} from "@angular/router";
 import {Product} from "../../models/product.model";
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
   selector: 'app-summary',
@@ -13,32 +14,41 @@ import {Product} from "../../models/product.model";
   imports: [
     CurrencyPipe,
     CartCounterComponent,
-    MatButtonModule
+    MatButtonModule,
+    NgForOf
   ],
   standalone: true
 })
-export class SummaryComponent {
-  public currentAmount: number = 1;
+export class SummaryComponent implements OnInit {
 
-  product: Product = {
-    name: 'Smycz długa',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    price: 50,
-    quantity: 1,
-    src: 'assets/meat.svg'
-  };
+  public products?: { product: Product, quantity: number }[];
 
   constructor(private readonly customerService: CustomerService,
-              private readonly router: Router) {
+              private readonly router: Router,
+              private cartService: CartService) {
   }
 
-  public handleQuantityChange(amount: number): void {
-    this.currentAmount = amount;
+  ngOnInit() {
+    this.products = this.cartService.getItems();
+    this.emitTotalQuantity();
+  }
+
+  public handleQuantityChange(amount: number, product: Product): void {
+    const item = this.products?.find(item => item.product === product);
+    if (item) {
+      item.quantity = amount;
+    }
+    this.emitTotalQuantity();
   }
 
   public onSubmit(): void {
-    this.customerService.sendProduct(this.product);
+    this.customerService.sendProduct(this.products?.map(item => ({...item.product, quantity: item.quantity})));
     this.router.navigate(['shopping-cart/shipping-information']);
+  }
+
+  private emitTotalQuantity(): void {
+    const total = this.products?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    this.cartService.updateTotalQuantity(total);
   }
 
 }

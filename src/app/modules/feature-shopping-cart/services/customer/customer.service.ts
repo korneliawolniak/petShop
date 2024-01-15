@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Customer} from "../../models/customer.model";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {CustomerApiService} from "../customer-api/customer-api.service";
 
 @Injectable({
@@ -9,8 +9,8 @@ import {CustomerApiService} from "../customer-api/customer-api.service";
 export class CustomerService {
   private productSubject = new BehaviorSubject(null);
   public product$ = this.productSubject.asObservable();
-  private customerSubject = new BehaviorSubject(null);
-  public customer$ = this.customerSubject.asObservable();
+  private customerSubject = new BehaviorSubject<Customer | null>(null);
+  public customer$: Observable<Customer | null> = this.customerSubject.asObservable();
 
   constructor(private readonly customerApiService: CustomerApiService) {
   }

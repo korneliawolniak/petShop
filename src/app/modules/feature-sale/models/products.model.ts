@@ -8,3 +8,9 @@ export interface Products {
   leashes: Product[];
   toys: Product[];
 }
+
+export interface Delivery {
+  type: string;
+  price: string;
+  time: string;
+}

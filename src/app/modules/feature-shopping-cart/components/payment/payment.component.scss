@@ -1,0 +1,150 @@
+@import "src/app/styles/fonts.scss";
+@import "src/app/styles/colors.scss";
+
+.payment-container {
+  position: relative;
+  padding: 30px;
+
+  .table-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+
+
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin-top: $table-margin-top;
+
+      thead {
+        background-color: $light-grey2;
+
+        th {
+          padding: $table-thead-th-padding;
+          border: $table-thead-th-border;
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: $table-tbody-tr-td-padding;
+            border: $table-tbody-tr-td-border;
+            vertical-align: middle;
+            text-align: center;
+            max-width: $table-tbody-tr-td-max-width;
+            max-height: $table-tbody-tr-td-max-height;
+
+            &:first-child {
+              max-width: $table-tbody-tr-td-first-child;
+            }
+
+            .item {
+              display: flex;
+              justify-content: space-around;
+
+
+              img {
+                width: $table-tbody-img-size;
+                margin-right: $table-tbody-img-margin-right;
+                vertical-align: middle;
+              }
+
+              .description {
+                width: 80%;
+                text-align: left;
+                align-self: center;
+
+                .product-name {
+                  font-size: $table-product-name-font-size;
+
+                }
+
+                .product-info {
+
+                }
+              }
+            }
+
+
+            button {
+              background-color: $light-grey2;
+              border: none;
+              padding: $table-product-button-padding;
+              cursor: pointer;
+              margin: $table-product-button-margin;
+
+              &:hover {
+                background-color: $light-grey2-hover;
+              }
+            }
+
+            p {
+              margin: $table-product-p-margin;
+              font-size: $table-product-p-font-size;
+              color: $grey2;
+            }
+
+            .price {
+              font-size: $table-product-price-font-size;
+            }
+
+            .quantity {
+              font-size: $table-product-quantity-font-size;
+              display: flex;
+              justify-content: space-evenly;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .summary-container {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .customer-info {
+      width: 82%;
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+    }
+
+    .cost-summary {
+      width: 18%;
+      font-size: 16px;
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .border {
+        border-bottom: 1px solid;
+        margin-bottom: 10px;
+      }
+
+    }
+
+    button {
+      position: absolute;
+      right: 75px;
+      bottom: 30px;
+      height: 3.15rem;
+      margin-right: 1.25rem;
+    }
+  }
+
+}

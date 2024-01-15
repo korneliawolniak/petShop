@@ -2,7 +2,7 @@
   <div class="nav-item">
     <ul>
       <li *ngFor="let category of categories">
-        <a (click)="selectCategory(category.link)" [routerLink]="category.link">{{ category.name }}</a>
+        <a [routerLink]="category.link">{{ category.name }}</a>
       </li>
     </ul>
   </div>

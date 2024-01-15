@@ -2,6 +2,11 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="customerForm">
     <div class="customer-data">
       <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" id="email" matInput required/>
+      </mat-form-field>
+
+      <mat-form-field>
         <mat-label>Name</mat-label>
         <input formControlName="name" id="name" matInput required/>
       </mat-form-field>
@@ -39,7 +44,9 @@
         class="radio-list"
         formControlName="deliveryOption">
         <mat-radio-button *ngFor="let delivery of deliveries" [value]="delivery" class="delivery-radio-button" required>
-          {{delivery}}
+          <span class="type">{{delivery.type}}</span>
+          <div class="info">
+            {{delivery.price | currency:'PLN'}} <b>{{delivery.time}}</b></div>
         </mat-radio-button>
       </mat-radio-group>
     </div>

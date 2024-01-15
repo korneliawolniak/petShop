@@ -6,8 +6,11 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
-import {NgClass, NgForOf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
 import {Router} from "@angular/router";
+import {Delivery} from "../../../feature-sale/models/products.model";
+import {paymentMethods} from "../../mocks/payments.mocks";
+import {deliveries} from "../../mocks/deliveries.mocks";
 
 @Component({
   selector: 'app-customer-data',
@@ -21,31 +24,23 @@ import {Router} from "@angular/router";
     MatRadioModule,
     FormsModule,
     NgForOf,
-    NgClass
+    NgClass,
+    CurrencyPipe
   ],
   standalone: true
 })
 export class CustomerDataComponent {
   public customerForm!: FormGroup;
   public deliveryOption?: string;
-  public deliveries: string[] = ['Standard Shipping', 'Express Shipping', 'In-Store Pickup', 'Click and Collect'];
-  public paymentMethods = [
-    {name: 'VISA', image: 'visa.gif'},
-    {name: 'Blik', image: 'blik.png'},
-    {name: 'ING', image: 'ing.png'},
-    {name: 'Credit Agricole', image: 'agricole.png'},
-    {name: 'Alior', image: 'alior.png'},
-    {name: 'Mbank', image: 'mbank.png'},
-    {name: 'Pocztowy', image: 'pocztowy.gif'},
-    {name: 'SGB', image: 'sgb.gif'},
-    {name: 'Santander', image: 'santander.png'}
-  ];
+  public deliveries: Delivery[] = deliveries;
+  public paymentMethods = paymentMethods;
   public selectedPaymentMethod?: string | null = null;
 
   constructor(private readonly fb: FormBuilder,
               private readonly customerService: CustomerService,
               private readonly router: Router) {
     this.customerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
       name: ['', Validators.required],
       surname: ['', Validators.required],
       address: ['', Validators.required],
@@ -66,6 +61,7 @@ export class CustomerDataComponent {
 
   public onSubmit(): void {
     const customer = new Customer(
+      this.customerForm?.value.email,
       this.customerForm?.value.name,
       this.customerForm?.value.surname,
       this.customerForm?.value.address,

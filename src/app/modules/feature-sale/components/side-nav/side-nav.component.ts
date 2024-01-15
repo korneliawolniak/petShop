@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {RouterLink} from "@angular/router";
-import {NavService} from "../../services/navigation/nav.service";
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -23,10 +22,6 @@ export class SideNavComponent {
     {name: 'Toys', link: 'toys'}
   ];
 
-  constructor(private readonly navService: NavService) {
-  }
-
-  public selectCategory(category: string): void {
-    this.navService.selectItem(category);
+  constructor() {
   }
 }

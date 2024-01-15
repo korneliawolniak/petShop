@@ -2,18 +2,28 @@
   <mat-card-content>
     <div class="content">
       <div class="img-container">
-        <img alt="meat" src="assets/meat.svg">
+        <img alt="meat" src="{{product.src}}">
       </div>
       <div class="description-container">
-        <h1>{{product.name}}</h1>
         <div class="description">
+          <h1>{{product.name}}</h1>
           <div class="info">
             {{product.description}}
           </div>
-          <div class="action-box">
-            <app-cart-counter (amount)="handleQuantityChange($event)"></app-cart-counter>
-            <button mat-raised-button>Add</button>
+        </div>
+        <div class="values">
+          <div class="price">
+            {{product.price  | currency:'PLN'}}
           </div>
+          <div class="quantity">
+            <h3>In stock:
+              {{product.quantity}}</h3>
+          </div>
+        </div>
+        <div class="action-box">
+          <app-cart-counter (amount)="handleQuantityChange($event)"
+                            [maxValue]="product.quantity"></app-cart-counter>
+          <button (click)="addToCart(product)" mat-raised-button>Add</button>
         </div>
       </div>
     </div>

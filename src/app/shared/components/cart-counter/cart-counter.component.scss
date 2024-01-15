@@ -15,6 +15,9 @@
       font-size: $cart-counter-font-size;
       color: $grey;
       font-weight: 300;
+      margin: 10px;
+      height: 1.85rem;
+      border-radius: 6px;
 
       &:focus {
         outline: 0;
@@ -24,7 +27,7 @@
     button[class*=btn] {
       width: $cart-counter-button-width;
       height: $cart-counter-button-height;
-      background-color: $very-light-grey;
+      background-color: #FFF;
       border-radius: 6px;
       border: none;
       cursor: pointer;

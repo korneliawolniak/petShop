@@ -14,12 +14,12 @@ $header-container-height: 6.25rem;
 $header-container-padding: 1.25rem;
 
 //about-us
-$about-us-container-padding: 3.15rem 18.75rem 3.15rem 4.35rem;
+$about-us-container-padding: 50px 100px;
 $about-us-section-margin-bottom: 2.5rem;
 
 
 //contact
-$contact-container-top-padding: 6.25rem;
+$contact-container-top-padding: 2.25rem;
 $contact-form-min-width: 9.35rem;
 $contact-form-max-width: 31.25rem;
 
@@ -62,8 +62,8 @@ $light-grey-steps-label: 0.85rem;
 $light-grey-steps-label-margin: 0.3rem;
 
 //customer-data
-$shipping-info-margin: 3.15rem;
-$shipping-section-margin: 3.15rem 0 3.15rem 6.25rem;
+$shipping-info-margin: 1.15rem 3.15rem;
+$shipping-section-margin: 1.15rem 0 3.15rem 6.25rem;
 $shipping-section-header: 1.65rem;
 $shipping-section-header-margin: 1.85rem;
 $shipping-section-radio-list-gap: 1.25rem;
@@ -81,7 +81,7 @@ $payment-method-radio-button-font-size: 1.35rem;
 
 //summary
 $table-container-padding-bottom: 5rem;
-$table-margin-top: 3.15rem;
+$table-margin-top: 1.15rem;
 $table-thead-th-padding: 0.6rem 0.9rem;
 $table-thead-th-border: 1px solid $light-grey2-hover;
 $table-tbody-tr-td-padding: 0.6rem 0.9rem;

@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatBadgeModule} from "@angular/material/badge";
 import {CommonModule} from "@angular/common";
+import {CartService} from "../../modules/feature-shopping-cart/services/cart/cart.service";
+import {Observable} from "rxjs";
 
 interface Tab {
   label: string;
@@ -24,7 +26,9 @@ interface Tab {
   standalone: true
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  public cartQuantity$?: Observable<number>;
+
   public tabsArray: Tab[] = [
     {label: 'About Us', routerLink: '/'},
     {label: 'Dog', routerLink: '/dog'},
@@ -32,7 +36,12 @@ export class HeaderComponent {
     {label: 'Contact', routerLink: '/contact'}
   ];
 
-  constructor(private readonly router: Router) {
+  constructor(private readonly router: Router,
+              private readonly cartService: CartService) {
+  }
+
+  ngOnInit() {
+    this.cartQuantity$ = this.cartService.totalQuantity$
   }
 
   public isActive(route: string): boolean {

@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ProductsService} from "../../services/products/products.service";
-import {Products} from "../../models/products.model";
-import {NavService} from "../../services/navigation/nav.service";
-import {switchMap} from "rxjs";
+import {Observable, switchMap} from "rxjs";
+import {Product} from "../../../feature-shopping-cart/models/product.model";
 
 @Component({
   selector: 'app-sale-page',
@@ -14,20 +13,22 @@ export class SalePageComponent implements OnInit {
   public animalCategory!: string;
   public productCategory?: string;
   public pageTitle?: string;
-  public products?: Products;
-  public products$: any;
+  public products$?: Observable<Product[]>;
 
   constructor(private readonly router: Router,
-              private readonly productsService: ProductsService,
-              public readonly navService: NavService) {
+              private readonly productsService: ProductsService) {
   }
 
   public ngOnInit(): void {
-    this.pageTitle = this.transformPathToTitle(this.router.url);
-    this.getCategories(this.router.url);
-    this.products$ = this.navService.selectedItem.pipe(switchMap((activeTab: string) => {
-      return this.productsService.getProducts(this.animalCategory, activeTab)
-    }));
+    this.products$ = this.router.events.pipe(
+      switchMap(() => {
+        const url = this.router.url;
+        const segments = url.split('/').filter(segment => segment !== '');
+        this.getCategories(segments)
+        this.pageTitle = this.transformPathToTitle(url);
+        return this.productsService.getProducts(this.animalCategory, this.productCategory);
+      })
+    )
   }
 
 
@@ -37,10 +38,8 @@ export class SalePageComponent implements OnInit {
     return relevantSegment.charAt(0).toUpperCase() + relevantSegment.slice(1);
   }
 
-  private getCategories(path: string): void {
-    const segments = path.split('/').filter(segment => segment !== '');
+  private getCategories(segments: string[]): void {
     this.animalCategory = segments.length > 0 ? segments[0] : '';
     this.productCategory = segments.length > 1 ? segments[1] : '';
   }
-
 }
