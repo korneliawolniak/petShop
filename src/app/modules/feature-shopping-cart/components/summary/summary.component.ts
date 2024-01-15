@@ -28,7 +28,7 @@ export class SummaryComponent implements OnInit {
               private cartService: CartService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.products = this.cartService.getItems();
     this.emitTotalQuantity();
   }
@@ -50,5 +50,4 @@ export class SummaryComponent implements OnInit {
     const total = this.products?.reduce((sum, item) => sum + item.quantity, 0) || 0;
     this.cartService.updateTotalQuantity(total);
   }
-
 }

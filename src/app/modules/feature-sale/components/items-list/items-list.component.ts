@@ -14,6 +14,4 @@ import {Product} from "../../../feature-shopping-cart/models/product.model";
 export class ItemsListComponent {
   @Input() products?: Product[] | null;
   @Input() pageTitle?: string;
-
-
 }

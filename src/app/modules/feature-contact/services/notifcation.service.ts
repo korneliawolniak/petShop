@@ -15,12 +15,4 @@ export class NotifcationService {
       duration: 3000,
     });
   }
-
-  public notify(text: string): void {
-    this._snackBar.open(text, undefined, {
-      duration: 3000,
-    });
-
-  }
-
 }

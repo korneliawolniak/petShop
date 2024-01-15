@@ -17,8 +17,7 @@ import {NgForOf} from "@angular/common";
 export class FaqComponent implements OnInit {
   public faqs?: FaqModel[];
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.faqs = faqs;
   }
-
 }

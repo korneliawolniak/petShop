@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Customer} from "../../models/customer.model";
 import {BehaviorSubject, Observable} from "rxjs";
-import {CustomerApiService} from "../customer-api/customer-api.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +11,11 @@ export class CustomerService {
   private customerSubject = new BehaviorSubject<Customer | null>(null);
   public customer$: Observable<Customer | null> = this.customerSubject.asObservable();
 
-  constructor(private readonly customerApiService: CustomerApiService) {
-  }
-
-  public submitProduct(customer: Customer) {
-    this.customerApiService.submitProduct(customer);
-  }
-
-  public sendProduct(data: any) {
+  public sendProduct(data: any): void {
     this.productSubject.next(data);
   }
 
-  public sendCustomer(data: any) {
+  public sendCustomer(data: any): void {
     this.customerSubject.next(data);
   }
 }

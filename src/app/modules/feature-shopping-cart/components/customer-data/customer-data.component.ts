@@ -52,7 +52,6 @@ export class CustomerDataComponent {
     });
   }
 
-
   public selectPaymentMethod(method: string): void {
     this.customerForm.get('paymentMethod')?.setValue(method);
     this.selectedPaymentMethod = this.customerForm.value.paymentMethod === method ? null : method;
@@ -71,14 +70,7 @@ export class CustomerDataComponent {
       this.customerForm?.value.deliveryOption,
       this.customerForm?.value.paymentMethod
     );
-
     this.customerService.sendCustomer(customer);
     this.router.navigate(['shopping-cart/payment']);
-
-
-    // this.customerService.submitProduct(product).subscribe((response) => {
-    //   console.log('Product submitted successfully!', response);
-    // });
   }
-
 }

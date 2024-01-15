@@ -1,17 +1,18 @@
 @import "src/app/styles/fonts.scss";
 @import "src/app/styles/colors.scss";
 
+$cost-summary-border: 1px solid;
+
 .payment-container {
   position: relative;
-  padding: 30px;
+  padding: $payment-container-padding;
 
   .table-container {
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: $payment-table-container-padding-bottom;
     flex-direction: column;
     align-items: center;
-
 
     table {
       width: 90%;
@@ -45,7 +46,6 @@
               display: flex;
               justify-content: space-around;
 
-
               img {
                 width: $table-tbody-img-size;
                 margin-right: $table-tbody-img-margin-right;
@@ -59,15 +59,9 @@
 
                 .product-name {
                   font-size: $table-product-name-font-size;
-
-                }
-
-                .product-info {
-
                 }
               }
             }
-
 
             button {
               background-color: $light-grey2;
@@ -111,19 +105,18 @@
     .customer-info {
       width: 82%;
 
-      h3 {
-        font-size: 1.25rem;
+      h2 {
+        font-size: $h2-font-size;
       }
 
       p {
-        font-size: 16px;
+        font-size: $p-font-size;
       }
-
     }
 
     .cost-summary {
       width: 18%;
-      font-size: 16px;
+      font-size: $cost-summary-font-size;
 
       .row {
         display: flex;
@@ -132,19 +125,17 @@
       }
 
       .border {
-        border-bottom: 1px solid;
-        margin-bottom: 10px;
+        border-bottom: $cost-summary-border;
+        margin-bottom: $cost-summary-border-margin-bottom;
       }
-
     }
 
     button {
       position: absolute;
-      right: 75px;
-      bottom: 30px;
-      height: 3.15rem;
-      margin-right: 1.25rem;
+      right: $summary-container-button-right;
+      bottom: $summary-container-button-bottom;
+      height: $summary-container-button-height;
+      margin-right: $summary-container-button-margin-right;
     }
   }
-
 }

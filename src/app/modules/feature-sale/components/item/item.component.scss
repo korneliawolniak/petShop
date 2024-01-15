@@ -1,8 +1,8 @@
 @import 'src/app/styles/fonts.scss';
 
 .card {
-  margin-bottom: 20px;
-  background: #ececec;
+  margin-bottom: $item-margin-bottom;
+  background: $very-light-grey;
 
   .content {
     display: flex;
@@ -39,22 +39,19 @@
         justify-content: space-around;
 
         .price {
-          font-size: 23px;
+          font-size: $item-price-font-size;
           align-self: center;
-
         }
 
         .quantity {
           display: flex;
-          font-size: 14px;
+          font-size: $item-quantity-font-size;
           justify-content: center;
 
           h3 {
             margin: 0;
-            font-size: 14px;
+            font-size: $h3-font-size;
           }
-
-
         }
       }
 
@@ -62,11 +59,11 @@
         width: 30%;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: $item-action-box-gap;
         justify-content: center;
 
         button {
-          width: 100px;
+          width: $item-action-box-button-width;
           align-self: center;
         }
       }

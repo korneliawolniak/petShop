@@ -1,0 +1,39 @@
+@import "src/app/styles/fonts.scss";
+
+.confirm-container {
+  width: 100%;
+  min-height: $confirm-container-min-height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .header {
+    font-size: $confirm-container-header-font-size;
+    height: $confirm-container-header-height;
+  }
+
+  .order-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .order-number {
+      font-size: $confirm-container-order-number-font-size;
+      height: $confirm-container-order-number-font-height;
+    }
+
+    .order-description {
+      font-size: $confirm-container-order-description-font-size;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: $confirm-container-img-width;
+      }
+    }
+  }
+}
+
+

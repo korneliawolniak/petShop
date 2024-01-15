@@ -9,7 +9,6 @@
     justify-content: center;
     padding-bottom: $table-container-padding-bottom;
 
-
     table {
       width: 90%;
       border-collapse: collapse;
@@ -42,7 +41,6 @@
               display: flex;
               justify-content: space-around;
 
-
               img {
                 width: $table-tbody-img-size;
                 margin-right: $table-tbody-img-margin-right;
@@ -55,15 +53,9 @@
 
                 .product-name {
                   font-size: $table-product-name-font-size;
-
-                }
-
-                .product-info {
-
                 }
               }
             }
-
 
             button {
               background-color: $light-grey2;

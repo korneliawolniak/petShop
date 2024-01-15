@@ -30,7 +30,7 @@ export class ItemComponent {
     this.currentAmount = amount;
   }
 
-  addToCart(product: Product) {
+  addToCart(product: Product): void {
     this.cartService.addToCart(product, this.currentAmount);
     this.cartService.addToTotalQuantity(this.currentAmount);
   }

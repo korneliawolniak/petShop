@@ -6,11 +6,7 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {CommonModule} from "@angular/common";
 import {CartService} from "../../modules/feature-shopping-cart/services/cart/cart.service";
 import {Observable} from "rxjs";
-
-interface Tab {
-  label: string;
-  routerLink: string;
-}
+import {Tab} from "../../shared/models/tab.model";
 
 @Component({
   selector: 'app-header',
@@ -40,7 +36,7 @@ export class HeaderComponent implements OnInit {
               private readonly cartService: CartService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.cartQuantity$ = this.cartService.totalQuantity$
   }
 

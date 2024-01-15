@@ -21,7 +21,4 @@ export class SideNavComponent {
     {name: 'Leashes', link: 'leashes'},
     {name: 'Toys', link: 'toys'}
   ];
-
-  constructor() {
-  }
 }

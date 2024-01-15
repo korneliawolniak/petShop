@@ -9,9 +9,6 @@ import {Products} from "../../models/products.model";
 })
 export class ProductsApiService {
 
-  constructor() {
-  }
-
   getProducts(animalCategory: string): Observable<Products> {
     if (animalCategory == 'dog') {
       return of(dogProducts)

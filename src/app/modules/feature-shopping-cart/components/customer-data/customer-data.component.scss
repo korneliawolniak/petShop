@@ -29,11 +29,9 @@
         gap: $shipping-section-radio-list-gap;
 
         .info {
-          font-size: 13px;
-
+          font-size: $shipping-section-info-font-size;
         }
       }
-
     }
 
     .payment-method-section {
@@ -49,7 +47,6 @@
         font-size: $payment-method-section-header-font-size;
         margin-bottom: $payment-method-section-header-margin-bottom;
         width: 100%;
-
       }
 
       .payment-method {

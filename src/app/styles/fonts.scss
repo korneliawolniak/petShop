@@ -1,6 +1,9 @@
 @import "src/app/styles/colors.scss"; //general
 
 $h1-font-size: 2.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 14px;
+$h5-font-size: 15px;
 $medium-font-weight: 400;
 $p-font-size: 1.15rem;
 $p-font-weight: 200;
@@ -16,12 +19,16 @@ $header-container-padding: 1.25rem;
 //about-us
 $about-us-container-padding: 50px 100px;
 $about-us-section-margin-bottom: 2.5rem;
+$about-us-info-box-margin-top: 50px;
+$about-us-info-box-margin-bottom: 50px;
+$about-us-offerings-box-gap: 20px;
 
 
 //contact
 $contact-container-top-padding: 2.25rem;
 $contact-form-min-width: 9.35rem;
 $contact-form-max-width: 31.25rem;
+$contact-top-position: 9.35rem;
 
 //faq
 $faq-container-width: 50vw;
@@ -31,6 +38,7 @@ $faq-list-container-padding-top: 1.8rem;
 
 //item-list
 $items-list-container-padding: 2.5rem;
+$items-list-container-height: 100vh;
 
 //side-nav
 $nav-li-a-padding: 1.25rem;
@@ -46,9 +54,18 @@ $cart-counter-font-size: 1rem;
 $cart-counter-price-font-size: 1.85rem;
 $cart-counter-button-height: 1.85rem;
 $cart-counter-button-width: 1.85rem;
+$cart-counter-quantity-input-margin: 10px;
+$cart-counter-quantity-input-height: 1.85rem;
+$cart-counter-quantity-input-border-radius: 6px;
+$cart-counter-button-border-radius: 6px;
 
 //item
 $item-image-size: 6.25rem;
+$item-margin-bottom: 20px;
+$item-price-font-size: 23px;
+$item-quantity-font-size: 14px;
+$item-action-box-gap: 20px;
+$item-action-box-button-width: 100px;
 
 //empty-cart
 $empty-cart-container-padding-top: 6.25rem;
@@ -78,6 +95,7 @@ $payment-method-box-shadow-selected: 0 5px 15px rgba(0, 0, 0, 0.5);
 $payment-method-button-height: 3.15rem;
 $payment-method-button-margin-right: 1.25rem;
 $payment-method-radio-button-font-size: 1.35rem;
+$shipping-section-info-font-size: 13px;
 
 //summary
 $table-container-padding-bottom: 5rem;
@@ -100,4 +118,20 @@ $table-product-price-font-size: 1.5rem;
 $table-product-quantity-font-size: 1.5rem;
 $summary-container-button-bottom: 0;
 $summary-container-button-right: 4.35rem;
+$payment-container-padding: 30px;
+$payment-table-container-padding-bottom: 20px;
+$cost-summary-font-size: 16px;
+$cost-summary-border-margin-bottom: 10px;
+$summary-container-button-right: 75px;
+$summary-container-button-bottom: 30px;
+$summary-container-button-height: 3.15rem;
+$summary-container-button-margin-right: 1.25rem;
 
+//confirm-page
+$confirm-container-min-height: 200px;
+$confirm-container-header-font-size: 40px;
+$confirm-container-header-height: 50px;
+$confirm-container-order-number-font-size: 24px;
+$confirm-container-order-number-font-height: 40px;
+$confirm-container-order-description-font-size: 16px;
+$confirm-container-img-width: 250px;

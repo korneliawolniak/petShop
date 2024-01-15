@@ -19,48 +19,39 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: $about-us-info-box-margin-top;
+    margin-bottom: $about-us-info-box-margin-bottom;
 
     .passion {
-      background: #ececec;
+      background: $very-light-grey;
       width: 40%;
-
     }
 
     .mission {
-      background: #ececec;
+      background: $very-light-grey;
       width: 40%;
-
     }
-
   }
 
   .offerings {
-
-
     mat-card {
-      background: #ececec;
+      background: $very-light-grey;
 
       .offerings-box {
         display: flex;
         flex-direction: row;
-        gap: 20px;
-
+        gap: $about-us-offerings-box-gap;
 
         mat-card {
-          background: #FFF;
-
+          background: $white;
           flex: 1;
 
           h5 {
-            font-size: 15px;
+            font-size: $h5-font-size;
             font-weight: bold;
           }
         }
-
       }
-
     }
   }
 

@@ -39,10 +39,7 @@ export class CartComponent implements DoCheck {
     this.currentUrl = partsUrl[partsUrl.length - 1]
   }
 
-
-  public navigateTo(path: string) {
+  public navigateTo(path: string): void {
     this.router.navigate(['shopping-cart', path]);
   }
-
-
 }

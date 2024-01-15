@@ -10,12 +10,10 @@ import {Observable} from "rxjs";
 export class ShoppingCartPageComponent implements OnInit {
   public cartQuantity$?: Observable<number>;
 
-
   constructor(private readonly cartService: CartService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.cartQuantity$ = this.cartService.totalQuantity$
   }
-
 }
