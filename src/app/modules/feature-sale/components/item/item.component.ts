@@ -20,19 +20,18 @@ import {CartService} from "../../../feature-shopping-cart/services/cart/cart.ser
   standalone: true
 })
 export class ItemComponent {
-  @Input() products?: Product[] | null;
+  @Input() public products?: Product[];
   public currentAmount: number = 1;
 
-  constructor(private cartService: CartService) {
+  constructor(private readonly cartService: CartService) {
   }
 
   public handleQuantityChange(amount: number): void {
     this.currentAmount = amount;
   }
 
-  addToCart(product: Product): void {
+  public addToCart(product: Product): void {
     this.cartService.addToCart(product, this.currentAmount);
     this.cartService.addToTotalQuantity(this.currentAmount);
   }
-
 }

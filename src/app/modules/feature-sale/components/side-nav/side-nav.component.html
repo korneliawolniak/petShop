@@ -2,7 +2,7 @@
   <div class="nav-item">
     <ul>
       <li *ngFor="let category of categories">
-        <a [routerLink]="category.link">{{ category.name }}</a>
+        <a (click)="navigate(category.link)">{{ category.name }}</a>
       </li>
     </ul>
   </div>

@@ -9,7 +9,7 @@ import {Products} from "../../models/products.model";
 })
 export class ProductsApiService {
 
-  getProducts(animalCategory: string): Observable<Products> {
+  public getProducts(animalCategory: string): Observable<Products> {
     if (animalCategory == 'dog') {
       return of(dogProducts)
     } else {

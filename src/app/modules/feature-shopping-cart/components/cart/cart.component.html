@@ -1,6 +1,6 @@
 <div class="container">
-  <div *ngIf="currentUrl!='confirm'" class="steps-container">
-    <div (click)="i < 2 ? navigateTo(step.route) : null"
+  <div class="steps-container">
+    <div (click)="i < 2 && navigateTo(step.route)"
          *ngFor="let step of steps; let i = index"
          [ngClass]="{'active': currentUrl === step.route}"
          class="step">

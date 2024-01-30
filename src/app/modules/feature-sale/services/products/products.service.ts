@@ -11,27 +11,21 @@ export class ProductsService {
   constructor(private readonly productsApiService: ProductsApiService) {
   }
 
-  getProducts(animalCategory: string, activeTab: string | undefined): Observable<Product[]> {
+  public getProducts(animalCategory: string, activeTab: string | undefined): Observable<Product[]> {
     return this.productsApiService.getProducts(animalCategory).pipe(map(products => {
       switch (activeTab) {
         case 'dry-food':
-          return products.dryFood
-          break;
+          return products.dryFood;
         case 'wet-food':
-          return products.wetFood
-          break;
+          return products.wetFood;
         case 'treats':
-          return products.treats
-          break;
+          return products.treats;
         case 'collars':
-          return products.collars
-          break;
+          return products.collars;
         case 'leashes':
-          return products.leashes
-          break;
+          return products.leashes;
         case 'toys':
-          return products.toys
-          break;
+          return products.toys;
         default:
           return []
       }

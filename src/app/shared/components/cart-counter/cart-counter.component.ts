@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -10,21 +10,17 @@ import {FormsModule} from "@angular/forms";
   ],
   standalone: true
 })
-export class CartCounterComponent implements OnChanges {
-  @Output() amount: EventEmitter<number> = new EventEmitter<number>();
-  @Input() maxValue = 100;
-  @Input() quantity?: number;
-  public value: number = 1;
+export class CartCounterComponent implements OnInit {
+  @Output() public amount: EventEmitter<number> = new EventEmitter<number>();
+  @Input() public maxValue = 100;
+  @Input() public quantity?: number;
+  public value = 1;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['quantity']) {
-      const newQuantity = changes['quantity'].currentValue;
-      if (newQuantity != null) {
-        this.value = newQuantity;
-      }
+  public ngOnInit() {
+    if (this.quantity) {
+      this.value = this.quantity
     }
   }
-
 
   public decrementValue(): void {
     if (this.value === 1) return;

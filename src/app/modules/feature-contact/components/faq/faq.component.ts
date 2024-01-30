@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatExpansionModule} from "@angular/material/expansion";
-import {FaqModel} from "../../models/faq.model";
 import {faqs} from "../../../../shared/mocks/faq.mocks";
 import {NgForOf} from "@angular/common";
 
@@ -14,10 +13,6 @@ import {NgForOf} from "@angular/common";
   ],
   standalone: true
 })
-export class FaqComponent implements OnInit {
-  public faqs?: FaqModel[];
-
-  ngOnInit(): void {
-    this.faqs = faqs;
-  }
+export class FaqComponent {
+  public faqs = faqs;
 }

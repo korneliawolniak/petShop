@@ -11,18 +11,18 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let product of product$ | async">
+      <tr *ngFor="let product of products">
         <td>
           <div class="item">
-            <img alt="{{ product.name }}" src="{{ product.src }}">
+            <img alt="{{ product.product.name }}" src="{{ product.product.src }}">
             <div class="description">
-              <p class="product-name">{{ product.name }}</p>
+              <p class="product-name">{{ product.product.name }}</p>
             </div>
           </div>
         </td>
         <td>
           <p class="price">
-            {{ product.price | currency:'PLN' }}
+            {{ product.product.price | currency:'PLN' }}
           </p>
         </td>
         <td>
@@ -32,14 +32,14 @@
         </td>
         <td>
           <p class="price">
-            {{ product.price * product.quantity | currency:'PLN' }}
+            {{ product.product.price * product.quantity | currency:'PLN' }}
           </p>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <div *ngIf="customer$ | async as customer" class="summary-container">
+  <div *ngIf="customer" class="summary-container">
     <div class="customer-info">
       <h2>Customer Details:</h2>
       <div>
@@ -57,7 +57,7 @@
       <div class="row"><p>Total: </p>
         <p>{{totalPrice | currency:'PLN'}}</p></div>
     </div>
-    <button (click)="pay()" [routerLink]="['/shopping-cart/confirm']" mat-raised-button type="submit">
+    <button (click)="pay()" mat-raised-button type="submit">
       Pay by {{customer?.paymentMethod }}
     </button>
   </div>

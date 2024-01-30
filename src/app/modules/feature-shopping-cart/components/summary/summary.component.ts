@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {CurrencyPipe, NgForOf} from "@angular/common";
 import {CartCounterComponent} from "../../../../shared/components/cart-counter/cart-counter.component";
 import {MatButtonModule} from "@angular/material/button";
-import {CustomerService} from "../../services/customer/customer.service";
 import {Router} from "@angular/router";
 import {Product} from "../../models/product.model";
 import {CartService} from "../../services/cart/cart.service";
@@ -21,15 +20,13 @@ import {CartService} from "../../services/cart/cart.service";
 })
 export class SummaryComponent implements OnInit {
 
-  public products?: { product: Product, quantity: number }[];
+  public products = this.cartService.getItems();
 
-  constructor(private readonly customerService: CustomerService,
-              private readonly router: Router,
-              private cartService: CartService) {
+  constructor(private readonly router: Router,
+              private readonly cartService: CartService) {
   }
 
-  ngOnInit(): void {
-    this.products = this.cartService.getItems();
+  public ngOnInit(): void {
     this.emitTotalQuantity();
   }
 
@@ -42,7 +39,6 @@ export class SummaryComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.customerService.sendProduct(this.products?.map(item => ({...item.product, quantity: item.quantity})));
     this.router.navigate(['shopping-cart/shipping-information']);
   }
 

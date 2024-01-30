@@ -8,26 +8,35 @@ import {BehaviorSubject} from "rxjs";
 export class CartService {
   private items: { product: Product, quantity: number }[] = [];
   private totalQuantitySource = new BehaviorSubject<number>(0);
-  totalQuantity$ = this.totalQuantitySource.asObservable();
+  public totalQuantity$ = this.totalQuantitySource.asObservable();
 
-  addToCart(product: Product, quantity: number): void {
-    this.items.push({product, quantity});
+  public addToCart(product: Product, quantity: number): void {
+    const existingItem = this.items.find(item => item.product.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      this.items.push({product, quantity});
+    }
   }
 
-  getItems(): { product: Product; quantity: number }[] {
+  public getItems(): { product: Product; quantity: number }[] {
     return this.items;
   }
 
-  updateTotalQuantity(quantity: number): void {
+  public resetItems(): void {
+    this.items = [];
+  }
+
+  public updateTotalQuantity(quantity: number): void {
     this.totalQuantitySource.next(quantity);
   }
 
-  addToTotalQuantity(quantityToAdd: number): void {
+  public addToTotalQuantity(quantityToAdd: number): void {
     const currentTotal = this.totalQuantitySource.getValue();
     this.totalQuantitySource.next(currentTotal + quantityToAdd);
   }
 
-  resetTotalQuantity(): void {
+  public resetTotalQuantity(): void {
     this.totalQuantitySource.next(0);
   }
 }

@@ -11,6 +11,6 @@ export interface Products {
 
 export interface Delivery {
   type: string;
-  price: string;
+  price: number;
   time: string;
 }

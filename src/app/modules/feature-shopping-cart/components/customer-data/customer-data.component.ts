@@ -34,7 +34,7 @@ export class CustomerDataComponent {
   public deliveryOption?: string;
   public deliveries: Delivery[] = deliveries;
   public paymentMethods = paymentMethods;
-  public selectedPaymentMethod?: string | null = null;
+  public selectedPaymentMethod?: string = '';
 
   constructor(private readonly fb: FormBuilder,
               private readonly customerService: CustomerService,
@@ -54,8 +54,8 @@ export class CustomerDataComponent {
 
   public selectPaymentMethod(method: string): void {
     this.customerForm.get('paymentMethod')?.setValue(method);
-    this.selectedPaymentMethod = this.customerForm.value.paymentMethod === method ? null : method;
-    this.selectedPaymentMethod = this.selectedPaymentMethod === method ? null : method;
+    this.selectedPaymentMethod = this.customerForm.value.paymentMethod === method ? '' : method;
+    this.selectedPaymentMethod = this.selectedPaymentMethod === method ? '' : method;
   }
 
   public onSubmit(): void {
@@ -70,7 +70,7 @@ export class CustomerDataComponent {
       this.customerForm?.value.deliveryOption,
       this.customerForm?.value.paymentMethod
     );
-    this.customerService.sendCustomer(customer);
+    this.customerService.setCustomer(customer);
     this.router.navigate(['shopping-cart/payment']);
   }
 }

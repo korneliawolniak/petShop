@@ -12,6 +12,6 @@ import {Product} from "../../../feature-shopping-cart/models/product.model";
   standalone: true
 })
 export class ItemsListComponent {
-  @Input() products?: Product[] | null;
-  @Input() pageTitle?: string;
+  @Input() public products?: Product[];
+  @Input() public pageTitle?: string;
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -21,4 +21,16 @@ export class SideNavComponent {
     {name: 'Leashes', link: 'leashes'},
     {name: 'Toys', link: 'toys'}
   ];
+  public category?: string;
+
+  constructor(private readonly router: Router,
+              private readonly activatedRoute: ActivatedRoute,) {
+  }
+
+  public navigate(link: string): void {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.category = params['animal'];
+    })
+    this.router.navigate([this.category, link], {queryParams: {animal: this.category, category: link}});
+  }
 }

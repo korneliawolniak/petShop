@@ -7,7 +7,6 @@ import {CartComponent} from './components/cart/cart.component';
 import {SummaryComponent} from './components/summary/summary.component';
 import {CustomerDataComponent} from './components/customer-data/customer-data.component';
 import {PaymentComponent} from './components/payment/payment.component';
-import {ConfirmPageComponent} from './pages/confirm-page/confirm-page.component';
 
 const routes: Routes = [
   {
@@ -17,14 +16,13 @@ const routes: Routes = [
       {path: '', redirectTo: 'summary', pathMatch: 'full'},
       {path: 'summary', component: SummaryComponent},
       {path: 'shipping-information', component: CustomerDataComponent},
-      {path: 'payment', component: PaymentComponent},
-      {path: 'confirm', component: ConfirmPageComponent},
+      {path: 'payment', component: PaymentComponent}
     ]
   },
 ];
 
 @NgModule({
-  declarations: [ShoppingCartPageComponent, ConfirmPageComponent,],
+  declarations: [ShoppingCartPageComponent],
   imports: [
     RouterModule.forChild(routes),
     NgIf,
