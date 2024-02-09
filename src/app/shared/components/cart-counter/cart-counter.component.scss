@@ -15,6 +15,9 @@
       font-size: $cart-counter-font-size;
       color: $grey;
       font-weight: 300;
+      margin: $cart-counter-quantity-input-margin;
+      height: $cart-counter-quantity-input-height;
+      border-radius: $cart-counter-quantity-input-border-radius;
 
       &:focus {
         outline: 0;
@@ -24,8 +27,8 @@
     button[class*=btn] {
       width: $cart-counter-button-width;
       height: $cart-counter-button-height;
-      background-color: $very-light-grey;
-      border-radius: 6px;
+      background-color: $white;
+      border-radius: $cart-counter-button-border-radius;
       border: none;
       cursor: pointer;
 
@@ -37,16 +40,9 @@
         background: $light-grey;
       }
     }
-
-    .minus-btn,
-    .plus-btn {
-      img {
-      }
-    }
   }
 
   .price {
     font-size: $cart-counter-price-font-size;
-
   }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -10,9 +10,17 @@ import {FormsModule} from "@angular/forms";
   ],
   standalone: true
 })
-export class CartCounterComponent {
-  @Output() amount: EventEmitter<number> = new EventEmitter<number>();
-  public value: number = 1;
+export class CartCounterComponent implements OnInit {
+  @Output() public amount: EventEmitter<number> = new EventEmitter<number>();
+  @Input() public maxValue = 100;
+  @Input() public quantity?: number;
+  public value = 1;
+
+  public ngOnInit() {
+    if (this.quantity) {
+      this.value = this.quantity
+    }
+  }
 
   public decrementValue(): void {
     if (this.value === 1) return;
@@ -21,9 +29,10 @@ export class CartCounterComponent {
   }
 
   public incrementValue(): void {
-    if (this.value >= 100) return;
-    this.value++;
-    this.emitQuantity();
+    if (this.value < this.maxValue) {
+      this.value++;
+      this.emitQuantity();
+    }
   }
 
   private emitQuantity(): void {

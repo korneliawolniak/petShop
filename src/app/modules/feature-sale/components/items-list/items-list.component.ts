@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ItemComponent} from "../item/item.component";
-import {Router} from "@angular/router";
+import {Product} from "../../../feature-shopping-cart/models/product.model";
 
 @Component({
   selector: 'app-items-list',
@@ -11,21 +11,7 @@ import {Router} from "@angular/router";
   ],
   standalone: true
 })
-export class ItemsListComponent implements OnInit {
-  public pageTitle?: string;
-
-  constructor(private readonly router: Router) {
-  }
-
-  public ngOnInit() {
-    this.pageTitle = this.transformPathToTitle(this.router.url)
-
-  }
-
-  private transformPathToTitle(path: string): string {
-    const trimmedPath = path.replace('/', '');
-    return trimmedPath.charAt(0).toUpperCase() + trimmedPath.slice(1);
-  }
-
-
+export class ItemsListComponent {
+  @Input() public products?: Product[];
+  @Input() public pageTitle?: string;
 }

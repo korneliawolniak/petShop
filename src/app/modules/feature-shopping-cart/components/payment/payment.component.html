@@ -1,7 +1,64 @@
-<div class="payment-container" xmlns="http://www.w3.org/1999/html">
-  product : {{product.name}}
-  customer: {{customer?.address}}<br>
-  {{customer?.city}}<br>
-  {{customer?.deliveryOption}}<br>
-  {{customer?.paymentMethod}}<br>
+<div class="payment-container">
+  <h1>Confirm order</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Items</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <div class="item">
+            <img alt="{{ product.product.name }}" src="{{ product.product.src }}">
+            <div class="description">
+              <p class="product-name">{{ product.product.name }}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="price">
+            {{ product.product.price | currency:'PLN' }}
+          </p>
+        </td>
+        <td>
+          <p class="quantity">
+            {{product.quantity}}
+          </p>
+        </td>
+        <td>
+          <p class="price">
+            {{ product.product.price * product.quantity | currency:'PLN' }}
+          </p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="customer" class="summary-container">
+    <div class="customer-info">
+      <h2>Customer Details:</h2>
+      <div>
+        <p>{{ customer?.name }} {{ customer?.surname }}</p>
+        <p>{{ customer?.address }}</p>
+        <p>{{ customer?.zipCode }} {{ customer?.city }}</p>
+        <p>{{ customer?.country }}</p>
+      </div>
+    </div>
+    <div class="cost-summary">
+      <div class="row"><p>Order value: </p>
+        <p>{{totalProductsPrice}}</p></div>
+      <div class="row border"><p>Delivery Costs: </p>
+        <p>{{customer?.deliveryOption?.price}}</p></div>
+      <div class="row"><p>Total: </p>
+        <p>{{totalPrice | currency:'PLN'}}</p></div>
+    </div>
+    <button (click)="pay()" mat-raised-button type="submit">
+      Pay by {{customer?.paymentMethod }}
+    </button>
+  </div>
 </div>

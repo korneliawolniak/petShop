@@ -1,6 +1,9 @@
 @import 'src/app/styles/fonts.scss';
 
 .card {
+  margin-bottom: $item-margin-bottom;
+  background: $very-light-grey;
+
   .content {
     display: flex;
 
@@ -17,24 +20,51 @@
 
     .description-container {
       width: 85%;
+      display: flex;
 
       .description {
+        width: 60%;
         display: flex;
+        flex-direction: column;
 
         .info {
           width: 70%;
         }
+      }
 
-        .action-box {
-          width: 30%;
+      .values {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .price {
+          font-size: $item-price-font-size;
+          align-self: center;
+        }
+
+        .quantity {
           display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          font-size: $item-quantity-font-size;
+          justify-content: center;
 
-          button {
-            width: 100px;
-            align-self: center;
+          h3 {
+            margin: 0;
+            font-size: $h3-font-size;
           }
+        }
+      }
+
+      .action-box {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: $item-action-box-gap;
+        justify-content: center;
+
+        button {
+          width: $item-action-box-button-width;
+          align-self: center;
         }
       }
     }

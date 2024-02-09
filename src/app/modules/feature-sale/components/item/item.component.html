@@ -1,25 +1,29 @@
-<mat-card class="card">
+<mat-card *ngFor="let product of products" class="card">
   <mat-card-content>
     <div class="content">
       <div class="img-container">
-        <img alt="meat" src="assets/meat.svg">
+        <img alt="meat" src="{{product.src}}">
       </div>
       <div class="description-container">
-        <h1>Item title</h1>
         <div class="description">
+          <h1>{{product.name}}</h1>
           <div class="info">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
+            {{product.description}}
           </div>
-          <div class="action-box">
-            <app-cart-counter (amount)="handleQuantityChange($event)"></app-cart-counter>
-            <button mat-raised-button>Add</button>
+        </div>
+        <div class="values">
+          <div class="price">
+            {{product.price  | currency:'PLN'}}
           </div>
+          <div class="quantity">
+            <h3>In stock:
+              {{product.quantity}}</h3>
+          </div>
+        </div>
+        <div class="action-box">
+          <app-cart-counter (amount)="handleQuantityChange($event)"
+                            [maxValue]="product.quantity"></app-cart-counter>
+          <button (click)="addToCart(product)" mat-raised-button>Add</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<ng-container *ngIf="false; else itemsInCart">
+<ng-container *ngIf="(cartQuantity$ | async) === 0; else itemsInCart">
   <app-empty-cart></app-empty-cart>
 </ng-container>
 <ng-template #itemsInCart>

@@ -5,8 +5,7 @@
   <div class="header__navbar">
     <nav [tabPanel]="tabPanel" mat-tab-nav-bar>
       <ng-container *ngFor="let tab of tabsArray">
-        <a [class.active]="isActive(tab.routerLink)"
-           [routerLink]="tab.routerLink" mat-tab-link>
+        <a (click)="navigate(tab.routerLink)" [class.active]="isActive(tab.routerLink)" mat-tab-link>
           {{ tab.label }}
         </a>
       </ng-container>
@@ -14,6 +13,6 @@
     <mat-tab-nav-panel #tabPanel/>
   </div>
   <div class="header__shopping-cart" routerLink="/shopping-cart">
-    <mat-icon matBadge="3" matBadgeColor="warn">shopping_cart</mat-icon>
+    <mat-icon matBadge="{{cartQuantity$  | async}}" matBadgeColor="warn">shopping_cart</mat-icon>
   </div>
 </div>
