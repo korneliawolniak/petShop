@@ -5,6 +5,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {Router} from "@angular/router";
 import {Product} from "../../models/product.model";
 import {CartService} from "../../services/cart/cart.service";
+import {RoutesPath} from "../../../../shared/enums/enums";
 
 @Component({
   selector: 'app-summary',
@@ -39,7 +40,7 @@ export class SummaryComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.router.navigate(['shopping-cart/shipping-information']);
+    this.router.navigate([RoutesPath.CART + '/' + RoutesPath.SHIPPING]);
   }
 
   private emitTotalQuantity(): void {

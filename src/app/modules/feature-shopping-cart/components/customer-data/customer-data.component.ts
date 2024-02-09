@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 import {Delivery} from "../../../feature-sale/models/products.model";
 import {paymentMethods} from "../../mocks/payments.mocks";
 import {deliveries} from "../../mocks/deliveries.mocks";
+import {RoutesPath} from "../../../../shared/enums/enums";
 
 @Component({
   selector: 'app-customer-data',
@@ -54,7 +55,6 @@ export class CustomerDataComponent {
 
   public selectPaymentMethod(method: string): void {
     this.customerForm.get('paymentMethod')?.setValue(method);
-    this.selectedPaymentMethod = this.customerForm.value.paymentMethod === method ? '' : method;
     this.selectedPaymentMethod = this.selectedPaymentMethod === method ? '' : method;
   }
 
@@ -71,6 +71,6 @@ export class CustomerDataComponent {
       this.customerForm?.value.paymentMethod
     );
     this.customerService.setCustomer(customer);
-    this.router.navigate(['shopping-cart/payment']);
+    this.router.navigate([RoutesPath.CART + '/' + RoutesPath.PAYMENT]);
   }
 }

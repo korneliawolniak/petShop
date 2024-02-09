@@ -5,6 +5,7 @@ import {SummaryComponent} from "../summary/summary.component";
 import {CustomerDataComponent} from "../customer-data/customer-data.component";
 import {PaymentComponent} from "../payment/payment.component";
 import {Router, RouterOutlet} from "@angular/router";
+import {RoutesPath} from "../../../../shared/enums/enums";
 
 @Component({
   selector: 'app-cart',
@@ -26,9 +27,9 @@ export class CartComponent implements DoCheck {
 
   public currentUrl?: string;
   public steps = [
-    {label: 'Summary', route: 'summary'},
-    {label: 'Shipping information', route: 'shipping-information'},
-    {label: 'Payment', route: 'payment'},
+    {label: 'Summary', route: RoutesPath.SUMMARY},
+    {label: 'Shipping information', route: RoutesPath.SHIPPING},
+    {label: 'Payment', route: RoutesPath.PAYMENT},
   ];
 
   constructor(private readonly router: Router) {
@@ -40,6 +41,6 @@ export class CartComponent implements DoCheck {
   }
 
   public navigateTo(path: string): void {
-    this.router.navigate(['shopping-cart', path]);
+    this.router.navigate([RoutesPath.CART, path]);
   }
 }

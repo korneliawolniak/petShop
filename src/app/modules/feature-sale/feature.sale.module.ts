@@ -4,6 +4,7 @@ import {SalePageComponent} from "./pages/sale-page/sale-page.component";
 import {SideNavComponent} from "./components/side-nav/side-nav.component";
 import {ItemsListComponent} from "./components/items-list/items-list.component";
 import {AsyncPipe} from "@angular/common";
+import {RoutesPath} from "../../shared/enums/enums";
 
 const routes: Routes = [
   {
@@ -13,30 +14,30 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dry-food'
+        redirectTo: RoutesPath.DRY
       },
       {
-        path: 'dry-food',
+        path: RoutesPath.DRY,
         component: SalePageComponent
       },
       {
-        path: 'wet-food',
+        path: RoutesPath.WET,
         component: SalePageComponent
       },
       {
-        path: 'treats',
+        path: RoutesPath.TREATS,
         component: SalePageComponent
       },
       {
-        path: 'collars',
+        path: RoutesPath.COLLARS,
         component: SalePageComponent
       },
       {
-        path: 'leashes',
+        path: RoutesPath.LEASHES,
         component: SalePageComponent
       },
       {
-        path: 'toys',
+        path: RoutesPath.TOYS,
         component: SalePageComponent
       }
     ]

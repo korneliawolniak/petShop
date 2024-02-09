@@ -7,16 +7,17 @@ import {CartComponent} from './components/cart/cart.component';
 import {SummaryComponent} from './components/summary/summary.component';
 import {CustomerDataComponent} from './components/customer-data/customer-data.component';
 import {PaymentComponent} from './components/payment/payment.component';
+import {RoutesPath} from "../../shared/enums/enums";
 
 const routes: Routes = [
   {
     path: '',
     component: ShoppingCartPageComponent,
     children: [
-      {path: '', redirectTo: 'summary', pathMatch: 'full'},
-      {path: 'summary', component: SummaryComponent},
-      {path: 'shipping-information', component: CustomerDataComponent},
-      {path: 'payment', component: PaymentComponent}
+      {path: '', redirectTo: RoutesPath.SUMMARY, pathMatch: 'full'},
+      {path: RoutesPath.SUMMARY, component: SummaryComponent},
+      {path: RoutesPath.SHIPPING, component: CustomerDataComponent},
+      {path: RoutesPath.PAYMENT, component: PaymentComponent}
     ]
   },
 ];

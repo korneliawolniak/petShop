@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {ProductsApiService} from "../products-api/products-api.service";
 import {map, Observable} from "rxjs";
 import {Product} from "../../../feature-shopping-cart/models/product.model";
+import {RoutesPath} from "../../../../shared/enums/enums";
 
 @Injectable({
   providedIn: 'root'
@@ -14,17 +15,17 @@ export class ProductsService {
   public getProducts(animalCategory: string, activeTab: string | undefined): Observable<Product[]> {
     return this.productsApiService.getProducts(animalCategory).pipe(map(products => {
       switch (activeTab) {
-        case 'dry-food':
+        case RoutesPath.DRY:
           return products.dryFood;
-        case 'wet-food':
+        case RoutesPath.WET:
           return products.wetFood;
-        case 'treats':
+        case RoutesPath.TREATS:
           return products.treats;
-        case 'collars':
+        case RoutesPath.COLLARS:
           return products.collars;
-        case 'leashes':
+        case RoutesPath.LEASHES:
           return products.leashes;
-        case 'toys':
+        case RoutesPath.TOYS:
           return products.toys;
         default:
           return []

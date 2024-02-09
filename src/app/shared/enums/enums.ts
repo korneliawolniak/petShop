@@ -1,0 +1,15 @@
+export enum RoutesPath {
+  DOG = "dog",
+  CAT = "cat",
+  DRY = "dry-food",
+  WET = "wet-food",
+  TREATS = "treats",
+  COLLARS = "collars",
+  LEASHES = "leashes",
+  TOYS = "toys",
+  CONTACT = "contact",
+  CART = "shopping-cart",
+  SUMMARY = "summary",
+  SHIPPING = "shipping-information",
+  PAYMENT = "payment",
+}
